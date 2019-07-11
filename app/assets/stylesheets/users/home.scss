@@ -1,0 +1,162 @@
+.user-home {
+  .avatar {
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+  }
+
+  .donation-card {
+    padding: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+    @include media-breakpoint-down(md) {
+      height: 100px;
+      width: 100%;
+      margin-bottom: 4px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px;
+      box-shadow: none;
+
+    }
+
+    &__donor-name {
+      a {
+        color: $text-body;
+        font-weight: bold;
+      }
+    }
+
+    .donated-to-text {
+      font-size: 12px;
+      color: $text-body;
+      line-height: normal;
+    }
+
+    &__time {
+      padding-bottom: 12px;
+      font-size: 10px;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $text-toned-down;
+    }
+  }
+
+  .home-section-title {
+    margin-bottom: 8px;
+    left: 15px;
+    .nav-link {
+      color: $text-subtitle;
+
+      &:hover {
+        border: none;
+        color: $text-body !important;
+      }
+    }
+    .active {
+      font-weight: bold;
+      border: none;
+      border-bottom: 4px solid $theme-primary !important;
+      padding-left: 0;
+      color: $text-body !important;
+    }
+  }
+
+  .home-section-content {
+    //@include media-breakpoint-down(lg) {
+    //
+    //}
+
+    &--active {
+      display: block;
+    }
+  }
+
+  .organization-activity-card {
+    min-width: 244px;
+    padding: 0;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    margin: 0 8px 12px 8px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    @include media-breakpoint-down(md) {
+      border-radius: 0;
+      margin-bottom: 5px;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    &__name {
+      font-weight: bold;
+      padding: 0 16px;
+      @include media-breakpoint-down(md) {
+        line-height: 16px;
+        font-size: 14px;
+      }
+    }
+
+    &__facebook-icon {
+      height: 20px;
+      width: 20px;
+      color: $facebook-blue;
+      background-color: white;
+    }
+
+    &__image--bottom {
+      border-radius: 12px;
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    &__image--top {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    &__body {
+      margin-right: 20px;
+    }
+
+    &__header {
+      padding: 12px 16px;
+    }
+  }
+
+  .new-donation-btn {
+    font-size: 18px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+    text-align: left;
+    padding: 12px 16px;
+
+    &--mobile {
+      font-size: 22px;
+      width: 36px;
+      height: 36px;
+      padding: 2px;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+      margin-right: 16px;
+      margin-bottom: 50px;
+      border-radius: 12px;
+    }
+  }
+
+  .tab-content {
+    @include media-breakpoint-up(lg) {
+      .tab-pane {
+        display: block;
+      }
+    }
+  }
+
+  .nav-tabs {
+    border: none;
+  }
+}

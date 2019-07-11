@@ -18,4 +18,8 @@ class Organization < ApplicationRecord
   }
 
   has_many :donations, dependent: :destroy
+
+  def profile_image
+    "wwf-logo"
+  end
 end
