@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   before_action :user, :donations_by_causes, only: %i[home show edit add_donation]
   before_action :ensure_current_user, :verify_access, only: %i[home edit]
 
-  def show
-  end
+  def show; end
 
   def edit
     @user_fav_orgs = @user.user_favorite_organizations[0..3]
