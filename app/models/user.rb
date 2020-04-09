@@ -38,6 +38,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
       user.nick_name = auth.extra.raw_info.short_name
       user.avatar_url = auth.info.image + "?type=large" # assuming the user model has a name
+      # TODO: user.fb_url = _____
       user.uid = auth.uid
       user.provider = auth.provider
     end
