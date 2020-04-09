@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   before_action :ensure_current_user, :verify_access, only: %i[home edit]
 
   def show
-    @badges = @user.badges
   end
 
   def edit

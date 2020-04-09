@@ -298,5 +298,7 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
   config.omniauth :facebook,
                   ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
-                  info_fields: 'email, first_name, last_name, middle_name, short_name' #  user_likes needs app approval from Facebook https://developers.facebook.com/docs/facebook-login/permissions/#reference-user_likes
+                  info_fields: 'email, first_name, last_name, short_name'
+  # user_link requires App Review from Facbebook: https://developers.facebook.com/docs/facebook-login/permissions#reference-user_link
+  # user_likes requires App Review from Facbebook: https://developers.facebook.com/docs/facebook-login/permissions#reference-user_likes
 end

@@ -11,8 +11,11 @@
         </p>
         <% if user_profile_page? %>
           <div class="user-header__social-networks">
-            <a href="#"><%= fa_icon "facebook-official", class: "fab" %></a>
-            <a href="#"><%= fa_icon "envelope-square" %></a>
+            <% if @user.fb_id.present? %>
+              <!-- Placeholder -->
+              <a href="<%= @user.fb_id %>"><%= fa_icon "facebook-official", class: "fab" %></a>
+            <% end %>
+            <a href="mailto:<%= @user.email %>"><%= fa_icon "envelope-square" %></a>
           </div>
         <% end %>
       </div>
