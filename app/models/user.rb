@@ -57,7 +57,7 @@ class User < ApplicationRecord
     @donated_causes ||= Organization.joins(donations: :user).where("user_id = ?", id).pluck(:org_type)
   end
 
-  ## NOTE: not yet stable. still experimenting. Need additional details. disable linting for this stand-in logic
+  # NOTE: not yet stable. still experimenting. Need additional details. disable linting for this stand-in logic
   # rubocop:disable Metrics/AbcSize
   def donations_by_causes
     return @donations_by_causes if @donations_by_causes.present?
@@ -74,7 +74,7 @@ class User < ApplicationRecord
     @donations_by_causes
   end
 
-  # @todo Move to a helper
+  # TODO: Move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"
   end
