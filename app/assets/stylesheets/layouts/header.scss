@@ -8,14 +8,10 @@
   margin-bottom: 80px;
   &--login {
     margin-bottom: 0;
-
   }
-
   @include media-breakpoint-down(sm) {
     margin-bottom: 32px;
   }
-
-
   .logo {
     width: 60px;
     height: 28px;
@@ -28,19 +24,17 @@
     letter-spacing: normal;
     margin-top: 16px;
     margin-left: 32px;
-  }
 
-  .logo > a {
-    text-decoration: none;
-    color: $theme-secondary;
+    a {
+      text-decoration: none;
+      color: $theme-secondary;
+    }
   }
-
   .header-search {
     font-family: Roboto, Helvetica, sans-serif;
     color: $text-body;
     margin-left: 36px;
     margin-top: 20px;
-    
     &__input {
       display: none;
       &--no-background {
@@ -51,7 +45,6 @@
       }
     }
   }
-
   &__login-btn {
     padding: 10px;
     width: 140px;
