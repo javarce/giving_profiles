@@ -3,7 +3,7 @@
   padding-right: 0;
 
   &__image {
-    width: 16.66667%;
+    width: calc(100% / 6);
     max-width: 104px;
     max-height: 104px;
     float: left;
@@ -11,13 +11,6 @@
     @include media-breakpoint-down(md) {
       max-height: 52px;
       max-width: 52px;
-    }
-
-    &--xs {
-      @include media-breakpoint-down(md) {
-        max-height: 52px;
-        max-width: 52px;
-      }
     }
   }
 

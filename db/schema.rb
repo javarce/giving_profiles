@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_000829) do
+ActiveRecord::Schema.define(version: 2020_04_09_224847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2019_12_13_000829) do
 
   create_table "users", force: :cascade do |t|
     t.string "nick_name"
-    t.string "fb_id"
     t.string "email"
     t.string "favorite_cause"
     t.string "favorite_cause_description"
@@ -76,13 +75,12 @@ ActiveRecord::Schema.define(version: 2019_12_13_000829) do
     t.string "last_name"
     t.string "location"
     t.string "encrypted_password"
-    t.datetime "remember_created_at"
     t.string "avatar_url"
     t.string "provider"
     t.string "uid"
+    t.string "fb_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["favorite_cause"], name: "index_users_on_favorite_cause"
-    t.index ["fb_id"], name: "index_users_on_fb_id", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["location"], name: "index_users_on_location"
