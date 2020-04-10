@@ -1,4 +1,4 @@
-<%= render "users/profile_sections/profile_section", title: "DONATIONS BY CAUSES"  do %>
+<%= render "users/profile/profile_section", title: "DONATIONS BY CAUSES"  do %>
   <% if @donations_by_causes.present? %>
   <div class="donations-bars">
     <% @donations_by_causes.each do |cause, percent| %>

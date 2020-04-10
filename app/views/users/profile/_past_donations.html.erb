@@ -1,4 +1,4 @@
-<%= render "users/profile_sections/profile_section", title: "PAST DONATIONS"  do %>
+<%= render "users/profile/profile_section", title: "PAST DONATIONS"  do %>
   <div class="mini-user-profile-info">
     <%= image_tag(@user.profile_image, class: "rounded-circle avatar mini-user-profile-info__pic") %>
     <span class="mini-user-profile-info__name"><%= @user.name %></span>
@@ -11,7 +11,7 @@
 
     <div class="past-donations-cards">
       <% @user.donations[0..2].compact.each do |donation| %> <!-- Currently just showing first 3 for now until we decide what to do. -->
-        <%= render "users/profile_sections/past_donation", donation: donation %>
+        <%= render "users/profile/past_donation", donation: donation %>
       <% end %>
     </div>
 

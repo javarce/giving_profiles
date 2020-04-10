@@ -1,4 +1,4 @@
-<%= render "users/profile_sections/profile_section", title: "BADGES"  do %>
+<%= render "users/profile/profile_section", title: "BADGES"  do %>
   <div class="badges-row">
     <% @user.badges[0..5].compact.each do |badge| %>
       <%= fa_icon "certificate", class: "color_#{badge} donation-badge" %>
