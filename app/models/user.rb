@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable, :validatable,
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   attr_accessor :organization_name
   attr_accessor :amount
 
-  # rubocop:disable AbcSize
+  # rubocop:disable Metrics/AbcSize
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -42,7 +42,7 @@ class User < ApplicationRecord
       user.provider = auth.provider
     end
   end
-  # rubocop:enable AbcSize
+  # rubocop:enable Metrics/AbcSize
 
   def badges
     donated_causes.uniq

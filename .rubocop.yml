@@ -1,4 +1,4 @@
-#default config at https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+# default config at https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
 
 AllCops:
   Include:
@@ -9,14 +9,13 @@ AllCops:
     - '**/Rakefile'
   Exclude:
     - 'spec/**/*'
-    - 'old_giving_profiles/**/*'
     - 'db/**/*'
     - 'config/**/*'
     - 'bin/**/*'
   TargetRubyVersion: 2.6.1
 
 # Commonly used screens these days easily fit more than 80 characters.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 # Too short methods lead to extraction of single-use methods, which can make

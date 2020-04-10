@@ -11,7 +11,7 @@ linters:
         - .rubocop.yml
       Layout/InitialIndentation:
         Enabled: false
-      Layout/TrailingBlankLines:
+      Layout/TrailingEmptyLines:
         Enabled: false
       Layout/TrailingWhitespace:
         Enabled: false
@@ -19,9 +19,7 @@ linters:
         Enabled: false
       Style/FrozenStringLiteralComment:
         Enabled: false
-      Metrics/LineLength:
+      Layout/LineLength:
         Enabled: false
       Lint/UselessAssignment:
-        Enabled: false
-      Rails/OutputSafety:
         Enabled: false
