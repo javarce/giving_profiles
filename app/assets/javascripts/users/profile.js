@@ -4,7 +4,7 @@
     flashSlideUp();
   });
 
-   //experimental function. just place holder for now. will be properly implemented later. 
+   //experimental function. just placeholder for now. will be properly implemented later.
   function setDonationBars(){
     var donations_bars = $(".donations-bars");
     grid_template_columns = "";
@@ -16,10 +16,10 @@
 
     $(".donations-bars").css("grid-template-columns", grid_template_columns);
 
-    // this is a hack to adjust space because column grid space pushes div outside of container. 
+    // this is a hack to adjust space because column grid space pushes div outside of container.
     // Will change this during proper implementation.
-    $(".donations-bars").css("padding-right", (($(".donations-bars > div").length -1)* 1) + "px");  
-  } 
+    $(".donations-bars").css("padding-right", (($(".donations-bars > div").length -1)* 1) + "px");
+  }
 
   function flashSlideUp(){
     var success_alert = $(".alert-success");
