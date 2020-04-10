@@ -1,13 +1,13 @@
 <%= render "users/profile_sections/profile_section", title: "PAST DONATIONS"  do %>
 
   <div class="mini-user-profile-info">
-    <%= fa_icon "user-circle 2x", class: "mini-user-profile-info__pic" %> <!-- Place holder for now. -->
+    <%= fa_icon "user-circle 2x", class: "mini-user-profile-info__pic" %> <!-- Placeholder for now. -->
     <span class="mini-user-profile-info__name"><%= @user.name %></span>
   </div>
 
   <% if @user.donations.present? %>
     <div class="past-donations-search">
-      <%= fa_icon "search", text: "Search my past donations" %> <!-- Place holder for now. -->
+      <%= fa_icon "search", text: "Search my past donations" %> <!-- Placeholder for now. -->
     </div>
 
     <div class="past-donations-cards">
@@ -16,7 +16,7 @@
       <% end %>
     </div>
 
-    <div class="scroll-to-see-more"> <!-- Place holder for now. -->
+    <div class="scroll-to-see-more"> <!-- Placeholder for now. -->
       <%= fa_icon "arrow-down", class: "scroll-to-see-more__icon" %>
       <span class="scroll-to-see-more__text">Scroll down to see more</span>
     </div>
