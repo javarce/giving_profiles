@@ -1,28 +1,13 @@
 # frozen_string_literal: true
 
 module UsersHelper
-  def show_edit_button?(_user)
-    if user_profile_page?
-      "d-block"
-    else
-      "d-none"
-    end
+  def user_page?
+    user_signed_in? && current_user == @user
   end
 
-  def show_location?
-    if user_profile_page?
-      "d-block"
-    else
-      "d-none"
-    end
-  end
-
+  # TODO: this should be reworked
   def user_profile_page?
     controller_name == "users" && action_name == "show"
-  end
-
-  def user_header_avatar_size
-    user_profile_page? ? "user-header__image" : "user-header__image user-header__image--xs"
   end
 
   def user_header_info_alignment
