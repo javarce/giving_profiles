@@ -10,7 +10,7 @@
       </div>
       <div class="favorite-text"> Favorite </div> <!-- What is the point of the tag? -->
     </div>
-    <%= fav_org_fields.text_area :description, class: "form-control fav-org__description" %>
+    <%= fav_org_fields.text_area :description, class: "form-control fav-org__description", placeholder: "I like/donate to this organization for..." %>
     <%= fav_org_fields.hidden_field :id, class: "fav-org__id" %>
   <% end %>
 </div>

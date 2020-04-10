@@ -37,7 +37,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <div class="modal-avatar">
-                  <img class="rounded-circle user-header__image user-header__image--sm modal-avatar-img" src="<%= @user.profile_image %>">
+                  <%= image_tag(@user.profile_image, class: "rounded-circle modal-avatar-img") %>
                 </div>
                 <h5 class="modal-title ml-2"><%= @user.name %></h5>
                 <button type="button" class="close donation-modal-close" data-dismiss="modal" aria-label="Close">
@@ -81,14 +81,13 @@
               <div class="row">
                 <%= link_to donation.user, class: "col-2 col-lg-3" do %>
                   <div class="mx-auto">
-                    <%= image_tag(donation.user.avatar_url, alt: "rss feed", class: "rounded-circle avatar") %>
+                    <%= image_tag(donation.user.avatar_url, class: "rounded-circle avatar") %>
                   </div>
                 <% end %>
                 <div class="col-10 col-lg-9">
                   <div class="user-home__card__header">
                     <%= link_to donation.user.name, donation.user, class: "align-top user-home__card__donor-name heading" %>
                     <div class="donated-to-text"> Donated to</div>
-<!--                    <a href="#" class="user-home__card__menu <%#= donation.user == current_user ? "" : "d-none" %>"><%#= fa_icon "ellipsis-v" %></a> -->
                   </div>
                   <div class="align-top user-home__card__organization body-medium"><%= donation.organization.name %></div>
                   <div class="user-home__card__time"><%= donation.created_at.strftime("%I:%M %p - %b %e, %Y") %></div>
@@ -111,7 +110,7 @@
                  data-hide-cover="false"
                  data-show-facepile="true">
               <blockquote cite="https://www.facebook.com/GreatHeartsCommunity/" class="fb-xfbml-parse-ignore">
-                <a href="<%= organization.fb_url %>">Loading - <%= organization.name %></a>
+                <%= link_to "Loading — #{organization.name}", organization.fb_url %>
               </blockquote>
             </div>
           </div>

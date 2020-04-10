@@ -30,7 +30,7 @@
         <%= link_to result.searchable, class: "container mt-2 mb-4 col-12 col-lg-3 col-md-4" do %>
           <div class="row mw-100">
             <div class="col-2 p-md-0">
-              <%= image_tag(result.searchable.profile_image, alt: "rss feed", class: "rounded-circle avatar") %>
+              <%= image_tag(result.searchable.profile_image, class: "rounded-circle avatar") %>
             </div>
             <div class="col-10 row mt-1">
               <h3 class="col-12 heading smaller ml-2">
@@ -64,7 +64,7 @@
         <div class="col-12 mb-4 col-md-6 container">
           <div class="row">
             <div class="col-2 col-md-1 p-md-0 w-50 mr-1 mr-lg-0">
-              <%= image_tag(result.searchable.avatar_url, alt: "rss feed", class: "rounded-circle avatar") %>
+              <%= image_tag(result.searchable.avatar_url, class: "rounded-circle avatar") %>
             </div>
             <div class="col-10 row mt-1 w-50">
               <h3 class="col-12 ml-md-2 ml-lg-0 heading smaller">
