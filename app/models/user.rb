@@ -67,8 +67,9 @@ class User < ApplicationRecord
                                          .sort_by { |d_by_c| -d_by_c[1] }
 
     if @donations_by_causes.size > 4
-      @donations_by_causes = @donations_by_causes[0..2] << ["others",
-                                                            @donations_by_causes[3..-1].map(&:second).reduce(:+)]
+      @donations_by_causes = @donations_by_causes[0..2] << [
+        "others", @donations_by_causes[3..-1].map(&:second).reduce(:+)
+      ]
     end
     @donations_by_causes
   end
