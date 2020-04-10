@@ -1,1 +1,0 @@
-$foo = $mongo.collection('foo')

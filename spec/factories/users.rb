@@ -4,7 +4,7 @@ FactoryBot.define do
     last_name  { Faker::Name.unique.last_name }
     location {Faker::Address.state}
     nick_name {Faker::Superhero.name}
-    email { Faker::Internet.email("#{first_name} #{last_name}", ".") }
+    email { Faker::Internet.email(name: "#{first_name} #{last_name}", separators: ".") }
     password { Faker::Internet.password }
 
     factory :user_with_favorite_organizations, aliases: [:user_with_fav_orgs] do
