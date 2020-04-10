@@ -38,6 +38,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
       user.nick_name = auth.extra.raw_info.short_name
       user.avatar_url = auth.info.image + "?type=large" # assuming the user model has a name
+      # TODO: user.fb_url = _____
       user.uid = auth.uid
       user.provider = auth.provider
     end
@@ -66,8 +67,9 @@ class User < ApplicationRecord
                                          .sort_by { |d_by_c| -d_by_c[1] }
 
     if @donations_by_causes.size > 4
-      @donations_by_causes = @donations_by_causes[0..2] << ["others",
-                                                            @donations_by_causes[3..-1].map(&:second).reduce(:+)]
+      @donations_by_causes = @donations_by_causes[0..2] << [
+        "others", @donations_by_causes[3..-1].map(&:second).reduce(:+)
+      ]
     end
     @donations_by_causes
   end

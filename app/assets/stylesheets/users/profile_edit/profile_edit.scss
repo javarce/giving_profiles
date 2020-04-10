@@ -16,10 +16,6 @@
       font-size: 14px;
     }
 
-    .profile-pic {
-      align-self: flex-start;
-    }
-
     .editable-content{
       flex-grow: 4;
       margin-left: 5%;
@@ -33,8 +29,10 @@
       flex-grow: 2;
     }
 
-    .rounded-circle{
+    .avatar {
       height: 104px;
+      width: 104px;
+      object-fit: cover;
     }
   }
 }

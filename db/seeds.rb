@@ -12,8 +12,9 @@ def create_user(first_name, last_name)
       yearly_income: rand(30..3000) * 1000,
       password: "password",
       location: "#{Faker::Address.city}, IL",
-      avatar_url: Faker::Avatar.image(nil, "50x50", "jpg", "any", "any")
-  ).find_or_create_by!(fb_id: "#{Faker::Number.number(10)}")
+      avatar_url: Faker::Avatar.image(nil, "50x50", "jpg", "any", "any"),
+      fb_url: Faker::Internet.url("facebook.com", "/profile", "https") # PLACEHOLDER
+  ).find_or_create_by!(uid: "#{Faker::Number.number(10)}")
 end
 
 def create_donation(user, organization)
