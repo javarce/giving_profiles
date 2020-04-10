@@ -1,18 +1,20 @@
-.user-profile {  
+.user-profile {
   .profile-section[data-title="favorite-organizations"] {
     .user-fav-orgs {
-      .favorite-organization {
+      .fav-org {
         margin-bottom: 20px;
         display: flex;
         flex-direction: row;
-        .fav-org__logo {
+        &__logo {
           margin-right: 15px;
         }
-        .fav-org__content {
+        &__content {
           flex-grow: 2;
+
           .fav-org__header {
             display: flex;
             justify-content: space-between;
+
             .fav-org__name{
               font-family: Roboto;
               font-size: 18px;
@@ -25,7 +27,7 @@
               margin-bottom: 5px;
             }
           }
-          .fav-org__description {
+          &__description {
             font-family: Roboto;
             font-size: 14px;
             font-weight: normal;
