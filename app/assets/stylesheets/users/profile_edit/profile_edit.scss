@@ -10,29 +10,21 @@
     .form-control {
       border: solid 1px $text-toned-down;
     }
-
     .label {
       color: $text-toned-down;
       font-size: 14px;
     }
-
     .editable-content{
       flex-grow: 4;
       margin-left: 5%;
       margin-right: 5%;
+
       .profile-section {
         margin-top: 30px;
       }
     }
-
     .action-buttons{
       flex-grow: 2;
-    }
-
-    .avatar {
-      height: 104px;
-      width: 104px;
-      object-fit: cover;
     }
   }
 }

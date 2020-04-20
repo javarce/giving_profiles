@@ -1,9 +1,9 @@
-.user-profile-edit {
+.editable-content {
   .profile-section[data-title="donations-by-causes"] {
-
     .donation-distribution {
       display: flex;
       margin-left: -40px;
+
       .right-arrow, .left-arrow {
         align-self: center;
         padding-left: 10px;
@@ -14,7 +14,6 @@
         color: $element-toned-down;
       }
     }
-
     .donation-bar {
       &__bar {
         height: 24px;
@@ -31,11 +30,9 @@
         margin-right: 3px;
       }
     }
-
     .bg_color_others {
       background-color: #abc8cc;
     }
-
     .fav-cause-desc {
       height: 75px;
       resize: none;
