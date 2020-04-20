@@ -1,7 +1,8 @@
-.user-profile-edit__form {
+.user-profile-edit {
   .action-buttons {
     display: flex;
     flex-direction: column;
+
     &__save {
       color: $text-light;
       background-color: $theme-secondary;
