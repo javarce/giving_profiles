@@ -8,14 +8,14 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   enum favorite_cause: Organization.org_types
   multisearchable against: %i[first_name last_name nick_name location],
+  multisearchable against: %i[first_name last_name location],
                   update_if: %i[
                     first_name_changed?
                     last_name_changed?
-                    nick_name_changed?
                     location_changed?
                   ]
 
-  pg_search_scope :search_by_name_email_location, against: %i[first_name last_name nick_name email location]
+  pg_search_scope :search_by_name_email_location, against: %i[first_name last_name email location]
 
   has_many :user_favorite_organizations, dependent: :destroy
   has_many :favorite_organizations, through: :user_favorite_organizations, source: :organization
@@ -36,7 +36,6 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.password = Devise.friendly_token[0, 20]
-      user.nick_name = auth.extra.raw_info.short_name
       user.avatar_url = auth.info.image + "?type=large" # assuming the user model has a name
       # TODO: user.fb_url = _____
       user.uid = auth.uid
