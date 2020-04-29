@@ -7,6 +7,9 @@
 @import "base/org_types";
 @import "base/components";
 
+// Shared Components CSS
+@import "shared/donation_distribution";
+
 // Layouts CSS
 @import "layouts/application";
 @import "layouts/footer";
@@ -18,7 +21,13 @@
 @import "pages/policy";
 @import "pages/login";
 
-// User CSS
+// Pages CSS
+@import "pages/about";
+@import "pages/home";
+@import "pages/policy";
+@import "pages/login";
+
+// Users CSS
 @import "users";
 @import "users/home";
 @import "search";

@@ -1,0 +1,11 @@
+<div class="flash__container">
+  <% %i[success error].each do |type| %>
+    <% if flash[type] %>
+      <div class="alert <%= bootstrap_class_for(type) %>" role="alert">
+        <div class="text">
+          <%= flash[type] %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

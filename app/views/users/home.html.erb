@@ -1,11 +1,7 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=2244551272451887&autoLogAppEvents=1"></script>
 <div class="user-home container-fluid">
-  <% if flash[:success] %>
-    <div class="profile-flash__container">
-      <%= render("shared/flash", type: "success", content: flash[:success]) %>
-    </div>
-  <% end %>
+  <%= render partial: "partials/flash" %>
   <%= render template: "layouts/user_header" %>
   <div class="user-home__sections">
     <div class="row user-home__section-titles">

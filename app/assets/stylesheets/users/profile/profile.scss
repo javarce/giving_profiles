@@ -2,9 +2,9 @@
   display: grid;
   grid-gap: 70px;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: 150px auto auto; 
+  grid-template-rows: 150px auto auto;
   padding-top: 20px;
-  
+
   [data-title="badges"] {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
@@ -27,13 +27,13 @@
   }
 
 
-// Still experimenting with these responsive designs. Will do more exploraion later. 
+// Still experimenting with these responsive designs. Will do more exploraion later.
   @media all and (max-width: 900px){
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 150px auto auto; 
-    
+    grid-template-rows: 150px auto auto;
+
     [data-title="badges"] {
       grid-column: 1 / 4;
       grid-row: 1 / 2;
@@ -59,25 +59,25 @@
   @media all and (max-width: 650px){
     display: flex;
     flex-direction: column;
-    
-    [data-title="badges"] { 
-      order: 0; 
+
+    [data-title="badges"] {
+      order: 0;
       margin: 5px;
     }
-    [data-title="philosophy"] { 
+    [data-title="philosophy"] {
       order: 1;
-      margin: 5px; 
-    }
-    [data-title="donations-by-causes"] { 
-      order: 2; 
       margin: 5px;
     }
-    [data-title="past-donations"] { 
-      order: 3; 
+    [data-title="donations-by-causes"] {
+      order: 2;
       margin: 5px;
     }
-    [data-title="favorite-organizations"] { 
-      order: 4; 
+    [data-title="past-donations"] {
+      order: 3;
+      margin: 5px;
+    }
+    [data-title="favorite-organizations"] {
+      order: 4;
       margin: 5px;
     }
   }
@@ -101,10 +101,4 @@
   border-top: solid 1.5px $element-toned-down;
   margin-top: 8px;
   margin-bottom: 12px;
-}
-
-.profile-flash__container {
-  height: 50px;
-  margin-top: 40px;
-  margin-bottom:10px;
 }
