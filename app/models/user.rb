@@ -7,7 +7,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
   enum favorite_cause: Organization.org_types
-  multisearchable against: %i[first_name last_name nick_name location],
   multisearchable against: %i[first_name last_name location],
                   update_if: %i[
                     first_name_changed?
