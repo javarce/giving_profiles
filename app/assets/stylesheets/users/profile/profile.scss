@@ -27,7 +27,7 @@
   }
 
 
-// Still experimenting with these responsive designs. Will do more exploraion later.
+  // Still experimenting with these responsive designs. Will do more exploraion later.
   @media all and (max-width: 900px){
     display: grid;
     grid-gap: 50px;
@@ -56,7 +56,7 @@
     }
   }
 
-  @media all and (max-width: 650px){
+  @media all and (max-width: 650px) {
     display: flex;
     flex-direction: column;
 
@@ -81,10 +81,8 @@
       margin: 5px;
     }
   }
-
 }
-
-.profile-section__title{
+.profile-section__title {
   width: 296px;
   height: 24px;
   font-family: Roboto;
@@ -96,7 +94,6 @@
   letter-spacing: 1px;
   color: $text-subtitle;
 }
-
 .profile-section__divider {
   border-top: solid 1.5px $element-toned-down;
   margin-top: 8px;

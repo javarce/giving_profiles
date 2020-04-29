@@ -15,11 +15,6 @@
 @import "layouts/footer";
 @import "layouts/header";
 @import "layouts/user_header";
-// Pages CSS
-@import "pages/about";
-@import "pages/home";
-@import "pages/policy";
-@import "pages/login";
 
 // Pages CSS
 @import "pages/about";
@@ -29,5 +24,6 @@
 
 // Users CSS
 @import "users";
-@import "users/home";
+
+// Search CSS
 @import "search";
