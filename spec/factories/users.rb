@@ -3,6 +3,7 @@ FactoryBot.define do
     first_name { Faker::Name.first_name }
     last_name  { Faker::Name.unique.last_name }
     location {Faker::Address.state}
+    nick_name {Faker::Superhero.name}
     email { Faker::Internet.email(name: "#{first_name} #{last_name}", separators: ".") }
     password { Faker::Internet.password }
 
@@ -16,3 +17,4 @@ FactoryBot.define do
     end
   end
 end
+
