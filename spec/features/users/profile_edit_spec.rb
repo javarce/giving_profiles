@@ -13,7 +13,7 @@ feature 'User profile edit', js: true do
     fill_in 'user_user_favorite_organizations_attributes_0_description', with: 'New favorite organization description.'
     click_button 'Save Profile'
 
-    within(".profile-flash__container") do 
+    within(".flash__container") do
       expect(page).to have_content "Successfully saved profile changes!"
     end
 
@@ -35,7 +35,7 @@ feature 'User profile edit', js: true do
     fill_in 'user_first_name', with: ''
     fill_in 'user_last_name', with: ''
     click_button 'Save Profile'
-    within(".profile-flash__container") do 
+    within(".flash__container") do
       expect(page).to have_content "First name can't be blank"
       expect(page).to have_content "Last name can't be blank"
     end

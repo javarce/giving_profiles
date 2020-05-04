@@ -13,11 +13,17 @@
 @import "layouts/header";
 @import "layouts/user_header";
 
+// Partials CSS
+@import "partials/flash";
+
+// Shared Components CSS
+@import "shared/donation_distribution";
+
 // Home CSS
 @import "home";
 
-// Users CSS
-@import "users";
-
 // Search CSS
 @import "search";
+
+// Users CSS
+@import "users";
