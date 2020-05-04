@@ -41,3 +41,18 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
     - 'lib/**/*.rake'
+
+# These lines are to supress unconfigured warnings for new cops.
+# In the future the solution outlined on this page should be used: https://docs.rubocop.org/en/latest/versioning/
+# However, this is parameter not yet supported -- see https://stackoverflow.com/questions/61108623/vscode-rubocop-complaining-about-unconfigured-cops
+# We should also consider whether we actually want to enable any of these.
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
