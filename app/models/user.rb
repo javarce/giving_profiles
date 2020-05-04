@@ -43,8 +43,9 @@ class User < ApplicationRecord
   end
   # rubocop:enable Metrics/AbcSize
 
+  # TODO: add more badge types
   def badges
-    donated_causes.uniq
+    donations_by_causes.map { |cause, amount| cause }
   end
 
   def name
@@ -52,19 +53,14 @@ class User < ApplicationRecord
   end
 
   def donated_causes
-    @donated_causes ||= Organization.joins(donations: :user).where("user_id = ?", id).pluck(:org_type)
+    @donated_causes ||= Donation.joins(:organization).where("user_id = ?", id).select(:org_type, :amount)
   end
 
-  # NOTE: not yet stable. still experimenting. Need additional details.
   def donations_by_causes
-    return @donations_by_causes if @donations_by_causes.present?
-
-    @donations_by_causes = donated_causes.group_by(&:itself)
-                                         .transform_values { |v| (v.size.to_f * 100 / donated_causes.size).round }
-                                         .sort_by { |d_by_c| -d_by_c[1] }
+    @donations_by_causes ||= donated_causes.group(:org_type).sum(:amount).sort_by { |cause, amount| -amount }.map { |cause, amount| [cause, (100 * amount.to_f / donated_causes.sum(:amount)).round] }
   end
 
-  # TODO: Move to a helper
+  # TODO: move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"
   end

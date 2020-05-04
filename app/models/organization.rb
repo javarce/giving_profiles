@@ -21,7 +21,7 @@ class Organization < ApplicationRecord
 
   has_many :donations, dependent: :destroy
 
-  # TODO: Move to a helper
+  # TODO: move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"
   end

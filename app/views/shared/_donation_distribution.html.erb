@@ -1,8 +1,7 @@
 <% if donations_by_causes.present? %>
   <div class="donation-distribution">
-    <%= render "shared/donation_bar", cause: donations_by_causes[0][0], percent: donations_by_causes[0][1], highest: true %>
-    <% donations_by_causes[1..-1].each do |cause, percent| %>
-      <%= render "shared/donation_bar", cause: cause, percent: percent, highest: false %>
+    <% donations_by_causes.each do |cause, percent| %>
+      <%= render "shared/donation_bar", cause: cause, percent: percent %>
     <% end %>
   </div>
 <% end %>
