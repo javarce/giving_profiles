@@ -45,19 +45,22 @@ class User < ApplicationRecord
 
   # TODO: add more badge types
   def badges
-    donations_by_causes.map { |cause, amount| cause }
+    donations_by_causes.map { |c, _| c }
   end
 
   def name
     "#{first_name} #{last_name}"
   end
 
-  def donated_causes
-    @donated_causes ||= Donation.joins(:organization).where("user_id = ?", id).select(:org_type, :amount)
+  def cause_donations
+    @cause_donations ||= Donation.joins(:organization).where("user_id = ?", id).select(:org_type, :amount)
   end
 
   def donations_by_causes
-    @donations_by_causes ||= donated_causes.group(:org_type).sum(:amount).sort_by { |cause, amount| -amount }.map { |cause, amount| [cause, (100 * amount.to_f / donated_causes.sum(:amount)).round] }
+    @donations_by_causes ||= cause_donations.group(:org_type)
+                                            .sum(:amount)
+                                            .sort_by { |_, a| -a }
+                                            .map { |c, a| [c, (100 * a.to_f / cause_donations.sum(:amount)).round] }
   end
 
   # TODO: move to a helper
