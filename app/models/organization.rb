@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Organization < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   multisearchable against: %i[name org_type location],
                   update_if: %i[name_changed? org_type_changed? location_changed?]
   pg_search_scope :search_by_name_type_location, against: %i[name org_type location]
@@ -21,7 +21,7 @@ class Organization < ApplicationRecord
 
   has_many :donations, dependent: :destroy
 
-  # TODO: Move to a helper
+  # TODO: move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"
   end

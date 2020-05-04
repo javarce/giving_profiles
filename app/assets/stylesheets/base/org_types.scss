@@ -7,7 +7,8 @@ $org_type_colors: (
   "animals":        $color-animals,
   "education":      $color-education,
   "international":  $color-international,
-  "human_services": $color-human_services
+  "human_services": $color-human_services,
+  "unknown":        $color-unkown,
 );
 
 $org_type_oval_text_colors: (
@@ -19,7 +20,8 @@ $org_type_oval_text_colors: (
   "animals":        $text-light,
   "education":      $text-light,
   "international":  $theme-secondary,
-  "human_services": $theme-secondary
+  "human_services": $theme-secondary,
+  "unknown":        $text-light,
 );
 
 
@@ -35,7 +37,7 @@ $org_type_oval_text_colors: (
   }
 }
 
-// for deciding what text color goes into org-type-oval. 
+// for deciding what text color goes into org-type-oval.
 @each $key, $color in $org_type_oval_text_colors {
   .org-type-oval[data-org-type=#{$key}] {
     color: $color;
@@ -56,6 +58,3 @@ $org_type_oval_text_colors: (
   margin-left: 5px;
   display: inline-block;
 }
-
-
-

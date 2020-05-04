@@ -5,13 +5,7 @@
   position: sticky;
   z-index: $top-z-index;
   top: 0;
-  margin-bottom: 80px;
-  &--login {
-    margin-bottom: 0;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 32px;
-  }
+  
   .logo {
     width: 60px;
     height: 28px;

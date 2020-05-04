@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
   enum favorite_cause: Organization.org_types
-  multisearchable against: %i[first_name last_name nick_name location],
+  multisearchable against: %i[first_name last_name location],
                   update_if: %i[
                     first_name_changed?
                     last_name_changed?
-                    nick_name_changed?
                     location_changed?
                   ]
 
-  pg_search_scope :search_by_name_email_location, against: %i[first_name last_name nick_name email location]
+  pg_search_scope :search_by_name_email_location, against: %i[first_name last_name email location]
 
   has_many :user_favorite_organizations, dependent: :destroy
   has_many :favorite_organizations, through: :user_favorite_organizations, source: :organization
@@ -36,7 +35,6 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.password = Devise.friendly_token[0, 20]
-      user.nick_name = auth.extra.raw_info.short_name
       user.avatar_url = auth.info.image + "?type=large" # assuming the user model has a name
       # TODO: user.fb_url = _____
       user.uid = auth.uid
@@ -45,36 +43,27 @@ class User < ApplicationRecord
   end
   # rubocop:enable Metrics/AbcSize
 
+  # TODO: add more badge types
   def badges
-    donated_causes.uniq
+    donations_by_causes.map { |c, _| c }
   end
 
   def name
     "#{first_name} #{last_name}"
   end
 
-  def donated_causes
-    @donated_causes ||= Organization.joins(donations: :user).where("user_id = ?", id).pluck(:org_type)
+  def cause_donations
+    @cause_donations ||= Donation.joins(:organization).where("user_id = ?", id).select(:org_type, :amount)
   end
 
-  # NOTE: not yet stable. still experimenting. Need additional details. disable linting for this stand-in logic
-  # rubocop:disable Metrics/AbcSize
   def donations_by_causes
-    return @donations_by_causes if @donations_by_causes.present?
-
-    @donations_by_causes = donated_causes.group_by(&:itself)
-                                         .transform_values { |v| (v.size.to_f * 100 / donated_causes.size).round }
-                                         .sort_by { |d_by_c| -d_by_c[1] }
-
-    if @donations_by_causes.size > 4
-      @donations_by_causes = @donations_by_causes[0..2] << [
-        "others", @donations_by_causes[3..-1].map(&:second).reduce(:+)
-      ]
-    end
-    @donations_by_causes
+    @donations_by_causes ||= cause_donations.group(:org_type)
+                                            .sum(:amount)
+                                            .sort_by { |_, a| -a }
+                                            .map { |c, a| [c, (100 * a.to_f / cause_donations.sum(:amount)).round] }
   end
 
-  # TODO: Move to a helper
+  # TODO: move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"
   end
@@ -84,6 +73,4 @@ class User < ApplicationRecord
   def network_donations
     Donation.all
   end
-
-  # rubocop:enable Metrics/AbcSize
 end

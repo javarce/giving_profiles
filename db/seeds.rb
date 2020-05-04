@@ -3,12 +3,10 @@ def create_user(first_name, last_name)
   User.create_with(
       first_name: first_name,
       last_name: last_name,
-      nick_name: Faker::Internet.username(name, ""),
       email: Faker::Internet.email(name),
       favorite_cause: User::favorite_causes.keys.sample,
       favorite_cause_description: Faker::Lorem.sentence(rand(4..10)),
       philosophy: [Faker::Quote.matz, Faker::Quote.yoda, Faker::Lorem.paragraph].sample,
-      address: Faker::Address.full_address,
       yearly_income: rand(30..3000) * 1000,
       password: "password",
       location: "#{Faker::Address.city}, IL",

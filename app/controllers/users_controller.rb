@@ -17,8 +17,8 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully saved profile changes!"
       redirect_to @user
     else
-      flash[:error] = @user.errors.full_messages.join(";  ")
-      render "edit"
+      flash.now[:error] = @user.errors.full_messages.join(";  ")
+      render action: "edit"
     end
   end
 
@@ -87,7 +87,7 @@ class UsersController < ApplicationController
   end
 
   def render_forbidden
-    # TODO: Add 403 page and render it
+    # TODO: add 403 page and render it
     # render file: 'public/403.html', status: 403
     redirect_to root_path
   end

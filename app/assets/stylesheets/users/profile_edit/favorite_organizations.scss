@@ -2,6 +2,7 @@
   .profile-section[data-title="favorite-organizations"] {
     .fav-org {
       margin-bottom: 20px;
+
       &__header {
         display: flex;
         margin-left: -50px;
@@ -13,15 +14,6 @@
           .org-type-oval {
             margin-left: 0px;
           }
-        }
-        .favorite-text {
-          font-size: 12px;
-          border-radius: 4px;
-          background-color: $theme-secondary;
-          align-self: flex-start;
-          padding: 5px 15px 5px 15px;
-          color: $text-light;
-          margin-left: auto;
         }
       }
       &__description {

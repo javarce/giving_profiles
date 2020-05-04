@@ -1,1 +1,3 @@
-$('.profile-flash__container').html("<%= j render('shared/flash', type: 'error', content: flash[:error]) %>");
+'use strict';
+
+$('.flash__container').replaceWith("<%= j render partial: 'partials/flash'%>");
