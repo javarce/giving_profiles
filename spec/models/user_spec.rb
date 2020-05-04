@@ -3,8 +3,6 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   subject { users(:bob_user) }
 
-  it { should define_enum_for(:favorite_cause).backed_by_column_of_type(:string) }
-
   it { should have_many(:user_favorite_organizations).dependent(:destroy) }
   it { should have_many(:donations).dependent(:destroy) }
   it { should validate_presence_of(:first_name) }
@@ -24,8 +22,8 @@ RSpec.describe User, type: :model do
     expect(new_user.valid?).to be_falsey
   end
 
-  describe "#name" do 
-    it "returns first_name plus last name with space in between." do 
+  describe "#name" do
+    it "returns first_name plus last name with space in between." do
       user = users(:bob_user)
       expect(user.name).to eql "Bob Bobson"
     end

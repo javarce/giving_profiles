@@ -4,7 +4,6 @@ def create_user(first_name, last_name)
       first_name: first_name,
       last_name: last_name,
       email: Faker::Internet.email(name),
-      favorite_cause: User::favorite_causes.keys.sample,
       favorite_cause_description: Faker::Lorem.sentence(rand(4..10)),
       philosophy: [Faker::Quote.matz, Faker::Quote.yoda, Faker::Lorem.paragraph].sample,
       yearly_income: rand(30..3000) * 1000,
