@@ -73,6 +73,7 @@ class UsersController < ApplicationController
                                  :email,
                                  :philosophy,
                                  :favorite_cause_description,
+                                 :yearly_income,
                                  :organization_name,
                                  :amount,
                                  user_favorite_organizations_attributes: %i[id description])

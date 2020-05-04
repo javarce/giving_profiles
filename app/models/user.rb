@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_presence_of :first_name, :last_name
+  validates :yearly_income, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   accepts_nested_attributes_for :user_favorite_organizations
 

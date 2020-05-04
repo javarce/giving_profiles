@@ -1,0 +1,15 @@
+.editable-content {
+  .input-group {
+    .input-group-prepend {
+      .input-group-text {
+        border: solid 1px $text-toned-down;
+        border-right: 0px;
+        background-color: white;
+        display: flex;
+      }
+    }
+    .annual-income-field {
+      border-left: 0px;
+    }
+  }
+}
