@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_205003) do
+ActiveRecord::Schema.define(version: 2020_05_11_034921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_205003) do
     t.datetime "updated_at", null: false
     t.string "location", default: ""
     t.string "avatar_url", default: "default_avatar.png"
+    t.boolean "highly_effective", default: false
     t.index ["fb_url"], name: "index_organizations_on_fb_url", unique: true
     t.index ["location"], name: "index_organizations_on_location"
     t.index ["name"], name: "index_organizations_on_name", unique: true
