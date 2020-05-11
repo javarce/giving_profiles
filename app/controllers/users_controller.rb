@@ -87,6 +87,6 @@ class UsersController < ApplicationController
   end
 
   def render_forbidden
-    render file: 'public/403.html', status: 403, layout: false
+    render file: "public/403.html", status: 403, layout: false
   end
 end
