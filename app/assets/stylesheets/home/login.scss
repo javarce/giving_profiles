@@ -17,7 +17,7 @@
     margin-top: 80px;
     padding-top: 20px;
     margin-right: 20px;
-    height: 376px;
+    height: 322px;
     border-radius: 12px;
   }
   @include media-breakpoint-up(lg) {
@@ -28,13 +28,7 @@
     }
   }
   &__card-title {
-    margin-top: 16px;
     margin-bottom: 16px;
-  }
-
-  &__heart-btn {
-    color: $gp-white;
-    background-color: $gp-yellow;
   }
 
   &__facebook-icon {
