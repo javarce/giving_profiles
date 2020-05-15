@@ -1,29 +1,7 @@
 .divider {
   border: solid 1px $element-toned-down;
-  margin-top: 8px;
-  margin-bottom: 15px;
-}
-
-.header {
-  &__heading {
-    margin-bottom: 4px;
-
-    &--large-margin {
-      margin-bottom: 16px;
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 12px;
-      }
-    }
-  }
-
-  &__divider {
-    width: 44%;
-    margin: 20px 0;
-    @include media-breakpoint-down(lg) {
-      width: 100%;
-      margin: 20px 0 15px 0;
-    }
-  }
+  margin-top: 20px;
+  margin-bottom: 19px;
 }
 
 .btn-white {

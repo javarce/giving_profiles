@@ -2,19 +2,4 @@
   margin-top: 60px;
   max-width: 1024px;
   margin-bottom: 48px;
-
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-  }
-  &__title-section {
-    @include media-breakpoint-down(lg) {
-      margin-bottom: 16px;
-    }
-  }
-  &__divider {
-    &--faq {
-      margin-top: 20px;
-      transition-duration: 2s;
-    }
-  }
 }
