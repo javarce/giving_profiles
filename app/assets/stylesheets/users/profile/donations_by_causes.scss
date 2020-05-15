@@ -1,14 +1,7 @@
-.user-profile {
-  @include media-breakpoint-up(lg) {
-    padding-left: 140px;
-    padding-right: 140px;
-  }
-
-  .profile-section[data-title="donations-by-causes"] {
-    .reason-for-giving {
-      font-size: 14px;
-      line-height: 1.14;
-      color: $text-body;
-    }
+.profile-section[data-title="donations-by-causes"] {
+  .reason-for-giving {
+    font-size: 14px;
+    line-height: 1.14;
+    color: $text-body;
   }
 }
