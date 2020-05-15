@@ -2,10 +2,6 @@
   * {
     transition: margin 2s;
   }
-  @include media-breakpoint-up(lg) {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
   .avatar {
     height: 36px;
     width: 36px;

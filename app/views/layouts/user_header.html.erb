@@ -1,8 +1,8 @@
-<div class="user-header d-flex container-fluid">
+<div class="user-header d-flex container-fluid p-0">
   <div class="row w-100 no-gutters">
     <div class="col-12 row no-gutters">
       <%= image_tag(@user.profile_image, class: "rounded-circle user-header__image") %>
-      <div class="user-header__info col <%= user_header_info_alignment %>">
+      <div class="user-header__info col">
         <h1 class="user-header__name">
           <%= @user.name %>
         </h1>
