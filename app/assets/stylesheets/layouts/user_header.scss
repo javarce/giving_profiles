@@ -1,29 +1,20 @@
 .user-header {
-  padding-left: 0;
-  padding-right: 0;
-
   &__image {
     width: calc(100% / 6);
     max-width: 104px;
     max-height: 104px;
     float: left;
     object-fit: cover;
+
     @include media-breakpoint-down(md) {
       max-height: 52px;
       max-width: 52px;
     }
   }
-
   &__info {
     margin-left: 16px;
-
-    &--margin-0 {
-      margin-top: 8px;
-      margin-left: 0;
-    }
-
+    margin-top: 16px;
   }
-
   &__name {
     color: $text-title;
     font-weight: 900;
@@ -36,7 +27,6 @@
       font-size: .7em;
     }
   }
-
   &__nav-wrapper {
     margin-left: auto;
 
@@ -57,15 +47,12 @@
       }
     }
   }
-
   &__location {
     color: $text-toned-down;
     margin-bottom: 4px;
 
   }
-
   &__social-networks {
-
     a {
       display: inline-block;
       color: $theme-secondary;
@@ -77,14 +64,12 @@
       }
     }
   }
-
   &__text {
     p {
       display: inline-block;
       margin-left: 10%;
     }
   }
-
   &__options {
     margin-left: auto;
     margin-bottom: 16px;
@@ -104,11 +89,9 @@
         height: 36px;
         width: 36px;
       }
-
       i.fa {
         font-size: 20px;
       }
-
       span {
         padding-left: 4px;
         line-height: 100%;
@@ -118,7 +101,6 @@
         }
 
       }
-
       &.active, &:hover {
         text-decoration: none;
         background: $theme-secondary;

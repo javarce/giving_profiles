@@ -1,0 +1,9 @@
+.page-content {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+}

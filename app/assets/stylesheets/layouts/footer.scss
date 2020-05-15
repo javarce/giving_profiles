@@ -1,46 +1,45 @@
-.footer {
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding-bottom: 136px; // height of footer
+  position: relative;
+}
+
+.page-footer {
   background: transparent;
-  color: $element-toned-down;
-  font-size: 18px;
   height: 96px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  position: absolute;
+  bottom: 0;
+
+  color:$element-toned-down;
+  &--login {
+    color: $text-light;
+  }
 
   @include media-breakpoint-up(lg) {
-    margin-bottom: 40px;
+    padding-left: 156px;
+    padding-right: 156px;
   }
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 0;
-  }
+
   &__copyright {
     @include media-breakpoint-down(sm) {
       font-size: 12px;
       line-height: 1.33;
     }
   }
-  &__branding {
-    letter-spacing: 2px;
-    font-size: 36px;
-    font-weight: 900;
-    color: $element-toned-down;
-    @include media-breakpoint-up(lg) {
-      padding: 0 140px;
-    }
-    &__login {
-      color: white;
-    }
-  }
-  &__site_map {
-    min-width: 250px !important;
-    @include media-breakpoint-up(lg) {
-      padding: 0 140px 0 0;
-    }
+  &__static-pages {
+    min-width: 250px;
+
     @include media-breakpoint-down(sm) {
       font-size: 16px;
       line-height: 20px;
     }
     a {
-      color: $element-toned-down !important;
+      color: inherit;
     }
   }
 }

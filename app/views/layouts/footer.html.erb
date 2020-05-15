@@ -1,13 +1,12 @@
-<footer class="container-fluid footer <%= "footer--login" if login_page? %>">
+<footer class="container-fluid page-footer <%= "page-footer--login" if login_page? %>">
   <div class="row d-flex align-items-end">
-    <div class="footer__branding col-4 text-left">
-      GIVING
-      PROFILES
+    <div class="logo-footer col-4 text-left">
+      GIVING<br>PROFILES
     </div>
-    <div class="footer__copyright text-md-center col col-md-4 col-lg-3">
+    <div class="page-footer__copyright text-md-center col col-md-4 col-lg-3">
       2017 - 2020 © Giving Profiles
     </div>
-    <div class="footer__site_map col-8 col-md-4 col-lg-5 text-right">
+    <div class="page-footer__static-pages col-8 col-md-4 col-lg-5 text-right">
       <%= link_to "About", "/about", class: "pr-3" %>
       <%= link_to "Contact", "/contact", class: "px-3 border-right border-left" %>
       <%= link_to "Policy", "/policy", class: "pl-3" %>
