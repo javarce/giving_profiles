@@ -1,5 +1,5 @@
 <%= render "users/profile/profile_section", title: "BADGES"  do %>
-  <div class="badges-row">
+  <div class="badges-row mb-3">
     <% @badges.each do |badge, tier| %>
       <!-- TODO: implement tiered coloring -->
       <%= fa_icon badge_logos[badge], class: "color_tier_#{tier} donation-badge" %>
@@ -7,7 +7,7 @@
   </div>
   <!-- TODO: decide how to handle overflow
   <% if @badges.size > 6 %>
-    <div class="remaining-badges"><%= "and #{@badges.size - 6} other #{'badge'.pluralize(@badges.size - 6)}..." %></div>
+    <div class="body-medium"><%= "and #{@badges.size - 6} other #{'badge'.pluralize(@badges.size - 6)}..." %></div>
   <% end %>
   -->
 <% end %>

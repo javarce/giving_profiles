@@ -6,15 +6,17 @@
         <h1 class="user-header__name">
           <%= @user.name %>
         </h1>
-        <p class="user-header__location">
+        <p class="user-header__location body-toned-down">
           <%= @user.location %>
         </p>
         <% if user_profile_page? %>
           <div class="user-header__social-networks">
             <% if @user.fb_url.present? %>
-              <%= link_to fa_icon("facebook-official", class: "fab"), @user.fb_url %>
+              <%= link_to fa_icon("facebook-square", class: "fab"), @user.fb_url %>
             <% end %>
-            <%= link_to fa_icon("envelope-square"), "mailto: #{@user.email}" %>
+            <% if @user.email.present? %>
+              <%= link_to fa_icon("envelope-square"), "mailto: #{@user.email}" %>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -22,28 +24,28 @@
         <div class="col ml-auto">
           <div class="user-header__nav-wrapper d-flex flex-column">
             <ul class="nav nav-pills user-header__options justify-content-end d-flex" id="myTab" role="tablist">
-              <li class="nav-item">
-                <%= link_to home_user_path(@user), class: "mx-2 nav-link #{'btn-dark btn-primary active' unless user_profile_page?}" do %>
+              <li class="mx-2 nav-item">
+                <%= link_to home_user_path(@user), class: "nav-link button-dark #{'active' unless user_profile_page?}" do %>
                   <%= fa_icon "home" %>
                   <span>Home</span>
                 <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to @user, class: "mx-2 nav-link #{'btn-dark btn-primary active' if user_profile_page?}" do %>
+              <li class="mx-2 nav-item">
+                <%= link_to @user, class: "nav-link button-dark #{'active' if user_profile_page?}" do %>
                   <%= fa_icon "user-circle" %>
                   <span>Profile</span>
                 <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to @user, class: "mx-2 nav-link" do %>
+              <li class="mx-2 nav-item">
+                <%= link_to @user, class: "nav-link button-dark" do %>
                   <%= fa_icon "cog" %>
                   <span>Settings</span>
                 <% end %>
               </li>
             </ul>
             <% if user_profile_page? %>
-              <div class="edit-profile-button-container mx-2">
-                <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-white align-self-end flex-row-reverse ml-auto" %>
+              <div class="edit-profile-container mx-2 ml-auto">
+                <%= link_to "Edit Profile", edit_user_path(@user), class: "button-dark" %>
               </div>
             <% end %>
           </div>

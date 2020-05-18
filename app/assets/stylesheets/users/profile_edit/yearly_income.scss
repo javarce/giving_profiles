@@ -1,0 +1,17 @@
+.user-profile-edit {
+  .profile-section[data-title="yearly-income"] {
+    .input-group {
+      .input-group-prepend {
+        .input-group-text {
+          border: solid 1px $text-toned-down;
+          border-right: 0px;
+          background-color: white;
+          display: flex;
+        }
+      }
+      .yearly-income-field {
+        border-left: 0px;
+      }
+    }
+  }
+}

@@ -164,7 +164,7 @@ body {
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 1.33;
   letter-spacing: normal;
   text-align: center;
   color: $theme-secondary;
@@ -175,7 +175,7 @@ body {
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 1.33;
   letter-spacing: normal;
   text-align: center;
   color: $text-light;
@@ -320,6 +320,14 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: $theme-secondary;
+}
+
+// Overflow
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 // Tags

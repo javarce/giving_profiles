@@ -27,84 +27,58 @@
       font-size: .7em;
     }
   }
-  &__nav-wrapper {
-    margin-left: auto;
-
-    .edit-profile-button-container {
-      align-self: flex-end;
-      @include media-breakpoint-up(lg) {
-        margin-top: 16px;
-        display: flex;
-        .btn {
-          width: 296px;
-        }
-      }
-      &--d-lg-none {
-        display: block;
-        @include media-breakpoint-up(lg) {
-          display: none !important;
-        }
-      }
-    }
-  }
   &__location {
-    color: $text-toned-down;
     margin-bottom: 4px;
-
   }
   &__social-networks {
     a {
       display: inline-block;
-      color: $theme-secondary;
+      color: inherit;
       font-size: 24px;
-      margin-right: 8px;
 
-      &:hover {
-        text-decoration: none;
+      &:not(:last-child) {
+        margin-right: 8px;
       }
     }
   }
-  &__text {
-    p {
-      display: inline-block;
-      margin-left: 10%;
-    }
-  }
-  &__options {
+  &__nav-wrapper {
     margin-left: auto;
-    margin-bottom: 16px;
 
-    a {
-      display: flex;
-      cursor: pointer;
-      color: $theme-secondary;
-      height: 48px;
-      width: 140px;
-      border-radius: 4px;
-      font-size: 18px;
-      justify-content: center;
-      align-items: center;
+    .nav {
+      margin-left: auto;
+      margin-bottom: 16px;
 
-      @include media-breakpoint-down(md) {
-        height: 36px;
-        width: 36px;
-      }
-      i.fa {
-        font-size: 20px;
-      }
-      span {
-        padding-left: 4px;
-        line-height: 100%;
+      a {
+        width: 140px;
+        height: 48px;
 
-        @include media-breakpoint-down(md) {
-          display: none;
+        &.active, &:hover {
+          @extend .button-light;
         }
 
+        @include media-breakpoint-down(md) {
+          height: 36px;
+          width: 36px;
+        }
+        span {
+          padding-left: 4px;
+          line-height: 100%;
+
+          @include media-breakpoint-down(md) {
+            display: none;
+          }
+
+        }
       }
-      &.active, &:hover {
-        text-decoration: none;
-        background: $theme-secondary;
-        color: $text-light;
+    }
+    .edit-profile-container {
+      display: flex;
+
+      a {
+        @include media-breakpoint-up(lg) {
+          width: 296px;
+          height: 48px;
+        }
       }
     }
   }
