@@ -32,7 +32,7 @@ $color-human_rights:   $gp-blue2; // unconfirmed
 $color-human_services: $gp-light-pink; // unconfirmed
 $color-international:  $gp-yellow;
 $color-religion:       $gp-orange; // unconfirmed
-$color-unkown:         $gp-red; // unconfirmed
+$color-unknown:        $text-body; // unconfirmed
 
 // z index index
 $top-z-index: 300;
@@ -40,5 +40,5 @@ $mid-z-index: 200;
 $bot-z-index: 100;
 
 // Bootstrap Overrides
-$primary: $gp-yellow;
-$secondary: #333333;
+$primary: $theme-primary;
+$secondary: $theme-secondary;

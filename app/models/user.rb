@@ -6,7 +6,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
-  enum favorite_cause: Organization.org_types
   multisearchable against: %i[first_name last_name location],
                   update_if: %i[
                     first_name_changed?
@@ -22,6 +21,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_presence_of :first_name, :last_name
+  validates :yearly_income, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   accepts_nested_attributes_for :user_favorite_organizations
 
@@ -43,24 +43,63 @@ class User < ApplicationRecord
   end
   # rubocop:enable Metrics/AbcSize
 
-  # TODO: add more badge types
-  def badges
-    donations_by_causes.map { |c, _| c }
-  end
-
   def name
     "#{first_name} #{last_name}"
   end
 
   def cause_donations
-    @cause_donations ||= Donation.joins(:organization).where("user_id = ?", id).select(:org_type, :amount)
+    @cause_donations ||= Donation.joins(:organization)
+                                 .where("user_id = ?", id)
+                                 .select(:org_type, :amount)
+                                 .group(:org_type)
+                                 .sum(:amount)
+  end
+
+  def donation_total
+    @donation_total ||= Donation.where("user_id = ?", id).sum(:amount).to_f
+  end
+
+  def highly_effective_donation_total
+    @highly_effective_donation_total ||= Donation.joins(:organization)
+                                                 .where("user_id = ? AND highly_effective = ?", id, true)
+                                                 .sum(:amount)
+  end
+
+  def local_donation_total
+    @local_donation_total ||= 0 # Placeholder
+  end
+
+  def income_percentage
+    yearly_income.present? ? donation_total / yearly_income : 0
+  end
+
+  def highly_effective_percentage
+    donation_total.positive? ? highly_effective_donation_total / donation_total : 0
+  end
+
+  def local_percentage
+    donation_total.positive? ? local_donation_total / donation_total : 0
+  end
+
+  def badge_tiers(badges)
+    thresholds = [0.1, 0.2, 0.5, 0.8, 0.9]
+    badges.sort_by { |_, p| -p }
+          .map { |b, p| [b, thresholds.find_index { |t| p < t } || thresholds.size] }
+          .select { |_, t| t.positive? }
+          .to_h
+  end
+
+  def badges
+    @badges ||= badge_tiers({
+      income: income_percentage,
+      highly_effective: highly_effective_percentage,
+      local: local_percentage
+    }.merge(cause_donations.map { |c, a| [c, (a.to_f / cause_donations.values.sum)] }.to_h))
   end
 
   def donations_by_causes
-    @donations_by_causes ||= cause_donations.group(:org_type)
-                                            .sum(:amount)
-                                            .sort_by { |_, a| -a }
-                                            .map { |c, a| [c, (100 * a.to_f / cause_donations.sum(:amount)).round] }
+    @donations_by_causes ||= cause_donations.sort_by { |_, a| -a }
+                                            .map { |c, a| [c, (100 * a.to_f / cause_donations.values.sum).round] }
   end
 
   # TODO: move to a helper

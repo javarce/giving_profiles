@@ -1,6 +1,6 @@
 <div class="donation-bar" data-cause="<%= cause %>" data-percent="<%= percent %>">
-  <div class="donation-bar__bar bg_color_<%= cause %>"></div>
-  <div class="donation-bar__cause">#<%= cause %></div>
-  <div class="donation-bar__percent"><%= percent.positive? ? percent : "<1" %>%</div>
+  <div class="donation-bar__over-bar bg_color_<%= cause %> mb-1"></div>
+  <div class="donation-bar__cause">#<%= cause.titleize %></div>
+  <div class="donation-bar__percent mb-1"><%= percent.positive? ? percent : "<1" %>%</div>
   <div class="donation-bar__under-bar bg_color_<%= cause %>"></div>
 </div>

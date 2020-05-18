@@ -1,6 +1,8 @@
-.editable-content {
-  .philosophy-field {
-    height:100px;
-    resize:none;
+.user-profile-edit {
+  .profile-section[data-title="philosophy"] {
+    .philosophy-field {
+      height: 100px;
+      resize: none;
+    }
   }
 }

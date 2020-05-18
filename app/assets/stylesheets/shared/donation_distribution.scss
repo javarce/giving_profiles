@@ -4,30 +4,21 @@
     .donation-bar {
         min-width: 4px;
 
-        &__bar {
+        &__over-bar {
             height: 24px;
-            margin-bottom: 4px;
         }
         &__cause {
-            font-size: 12px;
-
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        &__percent {
-            font-size: 12px;
-            margin-bottom: 4px;
+            @extend .overflow-ellipsis;
         }
         &__under-bar {
             height: 8px;
-            margin-bottom: 5px;
         }
         &:first-child {
-            font-weight: bold;
+            @extend .body-small-bold;
         }
         &:not(:first-child) {
-            margin-left: 4px;
+            @extend .body-small;
+            @extend .ml-1;
 
             .donation-bar__under-bar {
                 display: none;

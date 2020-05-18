@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_094051) do
+ActiveRecord::Schema.define(version: 2020_05_11_034921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_094051) do
     t.datetime "updated_at", null: false
     t.string "location", default: ""
     t.string "avatar_url", default: "default_avatar.png"
+    t.boolean "highly_effective", default: false
     t.index ["fb_url"], name: "index_organizations_on_fb_url", unique: true
     t.index ["location"], name: "index_organizations_on_location"
     t.index ["name"], name: "index_organizations_on_name", unique: true
@@ -62,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_04_29_094051) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "favorite_cause"
     t.string "favorite_cause_description"
     t.string "philosophy"
     t.integer "yearly_income"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 2020_04_29_094051) do
     t.string "uid"
     t.string "fb_url"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["favorite_cause"], name: "index_users_on_favorite_cause"
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["location"], name: "index_users_on_location"

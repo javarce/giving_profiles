@@ -1,0 +1,9 @@
+<%= render "users/profile/profile_section", title: "YEARLY INCOME"  do %>
+  <div class="label"> This information will only be used to calculate eligibility for badges, and will never be shown to other users. </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <%= fa_icon "usd", class: "input-group-text" %>
+    </div>
+    <%= form.number_field(:yearly_income, class: "form-control yearly-income-field", placeholder: "Enter yearly income") %>
+   </div>
+<% end %>

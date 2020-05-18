@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  helper_method :cause_logos # will delete when we get real org logos.
-  before_action :user, :donations_by_causes, only: %i[home show edit add_donation]
+  helper_method :cause_logos, :badge_logos
+  before_action :user, only: %i[home show edit add_donation]
+  before_action :donations_by_causes, only: %i[show edit]
+  before_action :badges, only: %i[show]
   before_action :ensure_current_user, :verify_access, only: %i[home edit]
 
   def show; end
@@ -51,6 +53,10 @@ class UsersController < ApplicationController
     @donations_by_causes = @user.donations_by_causes
   end
 
+  def badges
+    @badges = @user.badges
+  end
+
   # PLACEHOLDER
   def cause_logos
     {
@@ -62,8 +68,17 @@ class UsersController < ApplicationController
       "human_rights" => "street-view",
       "human_services" => "child",
       "international" => "globe",
-      "religion" => "chrome"
+      "religion" => "chrome",
+      "unknown" => "question"
     }
+  end
+
+  def badge_logos
+    cause_logos.merge({
+                        income: "usd",
+                        highly_effective: "check",
+                        local: "map-marker"
+                      })
   end
 
   def user_params
@@ -73,6 +88,7 @@ class UsersController < ApplicationController
                                  :email,
                                  :philosophy,
                                  :favorite_cause_description,
+                                 :yearly_income,
                                  :organization_name,
                                  :amount,
                                  user_favorite_organizations_attributes: %i[id description])
