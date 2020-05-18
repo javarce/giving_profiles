@@ -12,7 +12,7 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'bin/**/*'
-  TargetRubyVersion: 2.6.1
+  TargetRubyVersion: 2.6.6
 
 # Commonly used screens these days easily fit more than 80 characters.
 Layout/LineLength:
@@ -55,4 +55,12 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: false
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Style/SlicingWithRange:
   Enabled: false

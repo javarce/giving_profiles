@@ -4,7 +4,7 @@
 
 - Rails v5.2.2
 - Bundler
-- Ruby 2.6.1
+- Ruby 2.6.6
 - [Homebrew](https://brew.sh/)
   _ postgresql
   _ Suggested: rbenv or rvm
@@ -52,18 +52,18 @@ Check your ruby version
 ruby -v
 ```
 
-For this project you will need 2.6.1, if its not the listed version
+For this project you will need 2.6.6, if its not the listed version
 
 ```
 export PATH="$HOME/.rbenv/shims:$PATH"
 ```
 
 ```
-rbenv install 2.6.1
+rbenv install 2.6.6
 ```
 
 ```
-rbenv local 2.6.1
+rbenv local 2.6.6
 ```
 
 # FIRST TIME RUNNING THE APPLICATION
