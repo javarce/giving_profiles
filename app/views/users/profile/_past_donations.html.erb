@@ -1,23 +1,26 @@
 <%= render "users/profile/profile_section", title: "PAST DONATIONS"  do %>
   <div class="mini-user-profile-info">
-    <%= image_tag(@user.profile_image, class: "rounded-circle avatar mini-user-profile-info__pic") %>
-    <span class="mini-user-profile-info__name"><%= @user.name %></span>
+    <%= image_tag(@user.profile_image, class: "rounded-circle avatar mr-3") %>
+    <span class="heading"><%= @user.name %></span>
   </div>
 
   <% if @user.donations.present? %>
-    <div class="past-donations-search">
-      <%= fa_icon "search", text: "Search my past donations" %> <!-- Placeholder for now. -->
-    </div>
+    <div class="past-donations">
+      <div class="body-medium d-flex flex-row align-items-center mb-3">
+        <%= fa_icon "search", class: "mr-2" %>
+        <%= text_field_tag nil, nil, placeholder: "Search my past donations", class: "border-0 p-1 past-donations__search" %>
+      </div>
 
-    <div class="past-donations-cards">
-      <% @user.donations[0..2].compact.each do |donation| %> <!-- Currently just showing first 3 for now until we decide what to do. -->
-        <%= render "users/profile/past_donation", donation: donation %>
-      <% end %>
-    </div>
+      <div class="past-donations__cards mb-3 p-1">
+        <% @user.donations.reverse.compact.each do |donation| %>
+          <%= render "users/profile/past_donation", donation: donation %>
+        <% end %>
+      </div>
 
-    <div class="scroll-to-see-more"> <!-- Placeholder for now. -->
-      <%= fa_icon "arrow-down", class: "scroll-to-see-more__icon" %>
-      <span class="scroll-to-see-more__text">Scroll down to see more</span>
+      <div class="d-flex align-items-center">
+        <%= fa_icon "arrow-down", class: "icon-toned-down mr-4" %>
+        <span class="body-small">Scroll down to see more</span>
+      </div>
     </div>
   <% end %>
 <% end %>

@@ -109,10 +109,6 @@ body {
   line-height: 1.33;
   letter-spacing: normal;
   color: $text-toned-down;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
 .body-small {
   font-family: Roboto;
@@ -184,12 +180,14 @@ body {
 // Card Titles
 
 .card-title {
-  color: $text-title;
-  font-family: 'Roboto';
-  font-weight: 900;
-  letter-spacing: 0.2px;
+  font-family: Roboto;
   font-size: 24px;
-  letter-spacing: normal;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.2px;
+  color: $text-title;
 }
 
 // Headings
@@ -203,10 +201,6 @@ body {
   line-height: 1.33;
   letter-spacing: 0.2px;
   color: $text-title;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
 .heading-small {
   font-family: Roboto;
@@ -387,8 +381,4 @@ body {
   line-height: 1.33;
   letter-spacing: 1px;
   color: $text-subtitle;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }

@@ -1,14 +1,20 @@
-<div class="card donation-card container">
-  <div class="row">
-    <div class="col-12">
-      <div class="donation-card__header">
-        <div class="donated-to-text"> Donated to </div>
+<div class="donation-card d-flex flex-column justify-content-between p-3">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column">
+          <div class="body-medium">Donated to</div>
+          <%= link_to donation.organization.name, donation.organization.fb_url, class: "donation-card__organization body-medium-bold" %>
+        </div>
         <% if donation.user == current_user %>
-          <%= link_to fa_icon("ellipsis-v"), "#", class: "donation-card__menu" %> <!-- Placeholder for now. -->
+          <%= fa_icon "ellipsis-v", class: "donation-card__toggle" %>
         <% end %>
       </div>
-      <%= link_to donation.organization.name, "#", class: "align-top donation-card__organization body-medium" %>
-      <div class="donation-card__time"><%= donation.created_at.strftime("%I:%M %p - %b %e, %Y") %></div>
-    </div>
-  </div>
+      <div class="body-small-toned-down"><%= donation.created_at.strftime("%I:%M %p - %b %e, %Y") %></div>
+
+      <% if donation.user == current_user %>
+        <div class="donation-card__popup align-self-end d-none flex-column">
+          <%= link_to "Change to private", "#" %> <!-- Placeholder -->
+          <%= link_to "Edit", "#" %> <!-- Placeholder -->
+          <%= link_to "Delete", "#" %> <!-- Placeholder -->
+        </div>
+      <% end %>
 </div>
