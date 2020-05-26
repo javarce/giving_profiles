@@ -1,38 +1,29 @@
 // Color palette
-$gp-yellow: #f3c937;
-$gp-red: #ee4444;
-$gp-teal: #22aa99;
-$gp-purple: #7755cc;
-$gp-pink: #ff88aa;
-$gp-light-pink: #ea958c;
-$gp-green: #99cc66;
-$gp-blue: #1199ee;
-$gp-blue2: #3c5a99;
-$gp-orange: #f65633;
-$gp-white: #ffffff;
+$theme-primary:                   #f3c937;
+$theme-secondary:                 #333333;
 
-$theme-primary: $gp-yellow;
-$theme-secondary: #333333;
-$text-title: #000000;
-$text-subtitle: #aaaaaa;
-$text-body: #555555;
-$element-toned-down: #bbbbbb;
-$text-toned-down: #777777;
-$text-light: #ffffff;
-$facebook-blue: #3c5a99;
-$error: $gp-red;
-$light-hover: rgba(0, 0, 0, 0.1);
+$text-title:                      #000000;
+$text-subtitle:                   #aaaaaa;
+$text-body:                       #555555;
+$text-toned-down:                 #777777;
+$text-light:                      #ffffff;
 
-$color-animals:        $gp-teal; // unconfirmed
-$color-community:      $gp-pink;
-$color-education:      $gp-blue;
-$color-environment:    $gp-green;
-$color-health:         $gp-purple;
-$color-human_rights:   $gp-blue2; // unconfirmed
-$color-human_services: $gp-light-pink; // unconfirmed
-$color-international:  $gp-yellow;
-$color-religion:       $gp-orange; // unconfirmed
-$color-unknown:        $text-body; // unconfirmed
+$element-toned-down:              #bbbbbb;
+$facebook-blue:                   #3c5a99;
+$error:                           #ee4444;
+$light-hover:                     rgba(0, 0, 0, 0.1);
+
+// Cause colors
+$category-animals:                #ff7744;
+$category-community_development:  #ff88aa;
+$category-education:              #1199ee;
+$category-environment:            #99cc66;
+$category-health:                 #7755cc;
+$category-human_rights:           #4455bb;
+$category-human_services:         #ffaa22;
+$category-international:          #ffcc66;
+$category-religion:               #22aa99;
+$category-unknown:                $element-toned-down;
 
 // z index index
 $top-z-index: 300;

@@ -7,22 +7,11 @@
           <h5 class="card-title">Share your donations.</h5>
           <p class="body-toned-down">Share your donations with your friends and the community.</p>
           <p class="body-toned-down">See what charitable causes your friends care about.</p>
-          <div class="mt-5 w-100">
-            <a href="#" role="button" aria-pressed="true">
-              <div class="mt-auto p-2 bd-highlight btn btn-lg w-100 login__facebook-button">
-                <div class="row row align-items-center">
-                  <div class="col-2"><%= fa_icon "facebook-square", class: "login__facebook-icon fa-2x" %></div>
-                  <div class="col">
-                    <% unless current_user %>
-                      <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %>
-                      <% else %>
-                        <%= current_user.name %>
-                      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-                      <% end %>
-                  </div>
-                </div>
-              </div>
-            </a>
+          <div class="d-flex justify-content-center w-100">
+            <%= link_to user_facebook_omniauth_authorize_path, class: "login__facebook-button btn d-flex align-items-center mt-5" do %>
+              <%= fa_icon "facebook-square", type: :brand, class: "fa-2x mr-3" %>
+              Login with Facebook
+            <% end %>
           </div>
         </div>
       </div>

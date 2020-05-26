@@ -1,6 +1,6 @@
 // Body
 
-body {
+body, .body {
   font-family: Roboto;
   font-size: 18px;
   font-weight: normal;
@@ -216,9 +216,7 @@ body {
 // Icons
 
 .icon-dark {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -227,9 +225,7 @@ body {
   color: $theme-secondary;
 }
 .icon-disabled {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -238,9 +234,7 @@ body {
   color: $element-toned-down;
 }
 .icon-light {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -249,9 +243,7 @@ body {
   color: $text-light;
 }
 .icon-medium-dark {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -260,9 +252,7 @@ body {
   color: $theme-secondary;
 }
 .icon-medium-light {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -271,9 +261,7 @@ body {
   color: $text-light;
 }
 .icon-medium-toned-down {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -282,9 +270,7 @@ body {
   color: $text-toned-down;
 }
 .icon-toned-down {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;

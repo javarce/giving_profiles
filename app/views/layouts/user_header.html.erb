@@ -12,7 +12,7 @@
         <% if user_profile_page? %>
           <div class="user-header__social-networks">
             <% if @user.fb_url.present? %>
-              <%= link_to fa_icon("facebook-square", class: "fab"), @user.fb_url %>
+              <%= link_to fa_icon("facebook-square", type: :brand), @user.fb_url %>
             <% end %>
             <% if @user.email.present? %>
               <%= link_to fa_icon("envelope-square"), "mailto: #{@user.email}" %>

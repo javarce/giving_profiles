@@ -28,18 +28,11 @@
       margin-top: 100px;
     }
   }
-  &__facebook-icon {
-    color: $gp-white;
-    background-color: $facebook-blue;
-  }
   &__facebook-button {
-    height: 48px;
-    font-size: 1rem;
-    color: $gp-white;
+    @extend .body-light;
+
+    padding: 12px 16px;
     background-color: $facebook-blue;
-    a {
-      color: inherit;
-    }
   }
   small {
     margin-top: 12px;
