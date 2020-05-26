@@ -4,7 +4,12 @@
     <div class="fav-org__header">
       <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo" %> <!-- placeholder for now -->
       <div class="fav-org__name_and_type">
-        <div class="fav-org__name"> <%= favorite_organization.organization.name %> </div>
+        <div class="fav-org__name">
+          <%= favorite_organization.organization.name %>
+          <% if favorite_organization.organization.highly_effective %>
+            <%= fa_icon "check-circle" %>
+          <% end %>
+        </div>
         <%= render "shared/org_type_oval", org_type: org_type %>
       </div>
     </div>
