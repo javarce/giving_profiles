@@ -82,19 +82,18 @@ class User < ApplicationRecord
   end
 
   def badge_tiers(badges)
-    thresholds = [0.1, 0.2, 0.5, 0.8, 0.9]
-    badges.sort_by { |_, p| -p }
-          .map { |b, p| [b, thresholds.find_index { |t| p < t } || thresholds.size] }
-          .select { |_, t| t.positive? }
-          .to_h
+    thresholds = [0.1, 0.3, 0.5, 0.7, 0.9]
+    badges.sort_by { |_b, p, _d| -p }
+          .map { |b, p, d| [b, thresholds.find_index { |t| p < t } || thresholds.size, d] }
+          .select { |_b, t, _d| t.positive? }
   end
 
   def badges
-    @badges ||= badge_tiers({
-      income: income_percentage,
-      highly_effective: highly_effective_percentage,
-      local: local_percentage
-    }.merge(cause_donations.map { |c, a| [c, (a.to_f / cause_donations.values.sum)] }.to_h))
+    @badges ||= badge_tiers([
+      ["income", income_percentage, "income"],
+      ["highly_effective", highly_effective_percentage, "highly effective"],
+      ["local", local_percentage, "local"]
+    ] + cause_donations.map { |c, a| [c, (a.to_f / cause_donations.values.sum), c] })
   end
 
   def donations_by_causes

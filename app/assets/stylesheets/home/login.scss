@@ -33,6 +33,14 @@
 
     padding: 12px 16px;
     background-color: $facebook-blue;
+
+    &:hover {
+      color: $text-light;
+      opacity: 90%;
+    }
+  }
+  &__facebook-icon {
+    font-size: 24px;
   }
   small {
     margin-top: 12px;

@@ -27,27 +27,18 @@ $org_type_oval_text_colors: (
 
 @each $key, $color in $org_type_colors {
   .color_#{$key} {
-    color: $color;
+    color: $color !important;
   }
 }
 
 @each $key, $color in $org_type_colors {
   .bg_color_#{$key} {
-    background-color: $color;
+    background-color: $color !important;
   }
 }
 
-// for deciding what text color goes into org-type-oval.
 @each $key, $color in $org_type_oval_text_colors {
-  .org-type-oval[data-org-type=#{$key}] {
-    color: $color;
+  .bg_color_#{$key} {
+    color: $color !important;
   }
-}
-
-.org-type-oval {
-  height: 24px;
-  border-radius: 12px;
-  padding: 5px 10px;
-  margin-left: 5px;
-  display: inline-block;
 }

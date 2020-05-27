@@ -74,9 +74,9 @@ class UsersController < ApplicationController
 
   def badge_logos
     cause_logos.merge({
-                        income: "dollar-sign",
-                        highly_effective: "check-circle",
-                        local: "street-view"
+                        "income" => "dollar-sign",
+                        "highly_effective" => "check-circle",
+                        "local" => "street-view"
                       })
   end
 

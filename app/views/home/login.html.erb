@@ -7,12 +7,10 @@
           <h5 class="card-title">Share your donations.</h5>
           <p class="body-toned-down">Share your donations with your friends and the community.</p>
           <p class="body-toned-down">See what charitable causes your friends care about.</p>
-          <div class="d-flex justify-content-center w-100">
-            <%= link_to user_facebook_omniauth_authorize_path, class: "login__facebook-button btn d-flex align-items-center mt-5" do %>
-              <%= fa_icon "facebook-square", type: :brand, class: "fa-2x mr-3" %>
-              Login with Facebook
-            <% end %>
-          </div>
+          <%= link_to user_facebook_omniauth_authorize_path, class: "login__facebook-button btn d-flex align-items-center w-100 mt-5" do %>
+            <%= fa_icon "facebook-square", type: :brand, class: "mr-3 login__facebook-icon" %>
+            <span class="flex-grow-1">Login with Facebook</span>
+          <% end %>
         </div>
       </div>
       <div class="col-sm p-0">
