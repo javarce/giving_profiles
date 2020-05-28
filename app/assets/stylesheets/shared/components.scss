@@ -11,6 +11,10 @@
   @extend .button;
   @extend .btn-outline-secondary;
   border: solid 2px;
+
+  &.active, &:hover {
+    @extend .button-light;
+  }
 }
 
 .button-light {

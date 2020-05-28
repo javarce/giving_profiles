@@ -1,52 +1,54 @@
-.profile-section[data-title="past-donations"] {
-  .mini-user-profile-info {
-    margin-bottom: 12px;
+.user-profile {
+  .profile-section[data-title="past-donations"] {
+    .mini-user-profile-info {
+      margin-bottom: 12px;
 
-    .avatar {
-      height: 36px;
-      width: 36px;
-      object-fit: cover;
+      .avatar {
+        height: 36px;
+        width: 36px;
+        object-fit: cover;
+      }
     }
-  }
-  .past-donations {
-    &__search {
-      width: fill;
-    }
-    &__cards {
-      height: 320px;
-      overflow-y: scroll;
+    .past-donations {
+      &__search {
+        width: fill;
+      }
+      &__cards {
+        height: 320px;
+        overflow-y: scroll;
 
-      .donation-card {
-        height: 96px;
-        border-radius: 12px;
-        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
-
-        a {
-          color: inherit;
-        }
-        &:not(:last-child) {
-          margin-bottom: 12px;
-        }
-        &__toggle {
-          cursor: pointer;
-        }
-        &__popup {
-          position: absolute;
-          margin-top: 24px;
-          padding: 4px 0px;
-          background-color: $text-light;
+        .donation-card {
+          height: 96px;
+          border-radius: 12px;
           box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
 
           a {
-            @extend .body-dark;
+            color: inherit;
+          }
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
+          &__toggle {
+            cursor: pointer;
+          }
+          &__popup {
+            position: absolute;
+            margin-top: 24px;
+            padding: 4px 0px;
+            background-color: $text-light;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
 
-            text-decoration: none;
-            padding: 12px 16px;
+            a {
+              @extend .body-dark;
 
-            &:hover {
-              @extend .body-emphasis;
+              text-decoration: none;
+              padding: 12px 16px;
 
-              background-color: $light-hover;
+              &:hover {
+                @extend .body-emphasis;
+
+                background-color: $light-hover;
+              }
             }
           }
         }

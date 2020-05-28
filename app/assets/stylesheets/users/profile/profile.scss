@@ -4,19 +4,6 @@
     grid-gap: 70px;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 150px auto auto;
-    padding-top: 20px;
-
-    .profile-section {
-      .title-section {
-        width: 296px;
-        height: 24px;
-      }
-
-      .divider {
-        margin-top: 8px;
-        margin-bottom: 15px;
-      }
-    }
 
     [data-title="badges"] {
       grid-column: 1 / 4;

@@ -17,10 +17,6 @@
     margin-top: 80px;
     padding-top: 20px;
     border-radius: 12px;
-
-    .card-title {
-      margin-bottom: 16px;
-    }
   }
   @include media-breakpoint-up(lg) {
     .card {

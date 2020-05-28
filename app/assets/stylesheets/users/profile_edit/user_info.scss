@@ -1,16 +1,5 @@
 .user-profile-edit {
   .user-info {
     width: 80%;
-
-    &__row {
-      margin-bottom: 10px;
-    }
-    &__name-fields {
-      display: flex;
-
-      :first-child {
-          margin-right: 10px;
-      }
-    }
   }
 }

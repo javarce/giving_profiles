@@ -1,19 +1,19 @@
 <div class="user-info">
-  <div class="user-info__name user-info__row">
-    <div class="label"> Name </div>
-    <div class="user-info__name-fields">
-      <%= form.text_field :first_name, class: "form-control", placeholder: "Enter first name" %>
+  <div class="mb-3">
+    <div class="body-medium-toned-down mb-2"> Name </div>
+    <div class="d-flex">
+      <%= form.text_field :first_name, class: "form-control mr-3", placeholder: "Enter first name" %>
       <%= form.text_field :last_name, class: "form-control", placeholder: "Enter last name" %>
     </div>
   </div>
 
-  <div class="user-info__location user-info__row">
-    <div class="label"> Location </div>
+  <div class="mb-3">
+    <div class="body-medium-toned-down mb-2"> Location </div>
     <%= form.text_field :location, class: "form-control", placeholder: "Enter location" %>
   </div>
 
-  <div class="user-info__email user-info__row">
-    <div class="label"> Email </div>
+  <div class="mb-3">
+    <div class="body-medium-toned-down mb-2"> Email </div>
     <%= form.text_field :email, class: "form-control", placeholder: "Enter email" %>
   </div>
 </div>

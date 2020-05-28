@@ -1,10 +1,10 @@
 <% org_type = favorite_organization.organization.org_type %>
 <div class="fav-org">
   <%= form.fields_for :user_favorite_organizations, favorite_organization do |fav_org_fields| %>
-    <div class="fav-org__header">
+    <div class="fav-org__header d-flex">
       <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo" %> <!-- placeholder for now -->
-      <div class="fav-org__name_and_type">
-        <div class="fav-org__name">
+      <div class="ml-3">
+        <div class="body-emphasis">
           <%= favorite_organization.organization.name %>
           <% if favorite_organization.organization.highly_effective %>
             <%= fa_icon "check-circle" %>
