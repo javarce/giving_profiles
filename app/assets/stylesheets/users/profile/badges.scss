@@ -4,10 +4,12 @@
       width: 48px;
       height: 48px;
       font-size: 32px;
-      opacity: 80%;
+      border: 2px solid;
+      border-radius: 25%;
 
       &:hover {
         opacity: 100%;
+        border: 3px solid;
       }
     }
     .bg_color_income, .bg_color_highly_effective, .bg_color_local {
@@ -15,24 +17,22 @@
       color: $theme-secondary;
     }
     .badge_tier_1 {
-      border: 3px double;
-      border-radius: 50%;
+      opacity: 60%;
     }
     .badge_tier_2 {
-      border: 4px double;
-      border-radius: 45%;
+      opacity: 70%
     }
     .badge_tier_3 {
-      border: 2px solid;
-      border-radius: 35%;
+      opacity: 80%
     }
     .badge_tier_4 {
-      border: 3px solid;
-      border-radius: 30%;
+      opacity: 90%
     }
     .badge_tier_5 {
-      border: 4px solid;
-      border-radius: 25%;
+      opacity: 100%
     }
+  }
+  .badge-description {
+    text-align: center;
   }
 }

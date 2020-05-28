@@ -90,10 +90,10 @@ class User < ApplicationRecord
 
   def badges
     @badges ||= badge_tiers([
-      ["income", income_percentage, "income"],
-      ["highly_effective", highly_effective_percentage, "highly effective"],
-      ["local", local_percentage, "local"]
-    ] + cause_donations.map { |c, a| [c, (a.to_f / cause_donations.values.sum), c] })
+      ["income", income_percentage, "of yearly income"],
+      ["highly_effective", highly_effective_percentage, "to highly effective charities"],
+      ["local", local_percentage, "to local charities"]
+    ] + cause_donations.map { |c, a| [c, (a.to_f / cause_donations.values.sum), "to #{c.humanize capitalize: false} organizations"] })
   end
 
   def donations_by_causes
