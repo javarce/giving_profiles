@@ -1,100 +1,58 @@
-.profile-section[data-title="past-donations"] {
-  .mini-user-profile-info {
-    margin-bottom: 15px;
+.user-profile {
+  .profile-section[data-title="past-donations"] {
+    .mini-user-profile-info {
+      margin-bottom: 12px;
 
-    .avatar {
-      height: 36px;
-      width: 36px;
-      object-fit: cover;
+      .avatar {
+        height: 36px;
+        width: 36px;
+        object-fit: cover;
+      }
     }
-    &__pic {
-      margin-right: 10px;
-    }
-    &__name {
-      font-family: Roboto;
-      font-size: 18px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.33;
-      letter-spacing: 0.2px;
-      color: $text-title;
-    }
-  }
-  .past-donations-search {
-    margin-bottom: 15px;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.14;
-    letter-spacing: normal;
-    color: $text-body;
+    .past-donations {
+      &__search {
+        width: fill;
+      }
+      &__cards {
+        height: 320px;
+        overflow-y: scroll;
 
-  }
-  .past-donations-cards {
-    .past-donation-card {
-      margin-bottom: 10px;
-      padding: 15px;
-      padding-right: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+        .donation-card {
+          height: 96px;
+          border-radius: 12px;
+          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
 
-      &__header {
-        display: flex;
-        justify-content: space-between;
-        .donated-to-text {
-          font-family: Roboto;
-          font-size: 14px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.14;
-          letter-spacing: normal;
-          color: $text-body;
-        }
-        .past-donation-card__menu {
-          color: $text-toned-down;
+          a {
+            color: inherit;
+          }
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
+          &__toggle {
+            cursor: pointer;
+          }
+          &__popup {
+            position: absolute;
+            margin-top: 24px;
+            padding: 4px 0px;
+            background-color: $text-light;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+
+            a {
+              @extend .body-dark;
+
+              text-decoration: none;
+              padding: 12px 16px;
+
+              &:hover {
+                @extend .body-emphasis;
+
+                background-color: $light-hover;
+              }
+            }
+          }
         }
       }
-      &__organization {
-        font-family: Roboto;
-        font-size: 14px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.14;
-        letter-spacing: normal;
-        color: $text-body;
-      }
-      &__time {
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: $text-toned-down;
-        margin-top: 20px;
-      }
-    }
-  }
-  .scroll-to-see-more {
-    &__text {
-      font-family: Roboto;
-      font-size: 12px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: $text-body;
-    }
-    &__icon {
-      color: $text-toned-down;
-      margin-right: 15px;
     }
   }
 }

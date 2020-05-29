@@ -1,13 +1,8 @@
 .user-profile-edit {
-  .action-buttons {
-    display: flex;
-    flex-direction: column;
-
-    input, a {
-      @include media-breakpoint-up(lg) {
-        width: 296px;
-        height: 48px;
-      }
+  .action-buttons > * {
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+      height: 48px;
     }
   }
 }

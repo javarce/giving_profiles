@@ -1,13 +1,15 @@
 <%= render "users/profile/profile_section", title: "BADGES"  do %>
-  <div class="badges-row mb-3">
-    <% @badges.each do |badge, tier| %>
-      <!-- TODO: implement tiered coloring -->
-      <%= fa_icon badge_logos[badge], class: "color_tier_#{tier} donation-badge" %>
-    <% end %>
+  <div class="d-flex flex-column align-items-center">
+    <div class="badge-row d-flex justify-content-center flex-wrap">
+      <% @badges.each do |badge, tier, description| %>
+        <div
+          data-tier="<%= tier %>"
+          data-description="<%= description %>"
+          class="badge d-flex justify-content-center align-items-center bg_color_<%= badge %> badge_tier_<%= tier %> mb-3 mx-2">
+          <%= fa_icon badge_logos[badge] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="badge-description body-small-toned-down"></div>
   </div>
-  <!-- TODO: decide how to handle overflow
-  <% if @badges.size > 6 %>
-    <div class="body-medium"><%= "and #{@badges.size - 6} other #{'badge'.pluralize(@badges.size - 6)}..." %></div>
-  <% end %>
-  -->
 <% end %>

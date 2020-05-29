@@ -1,31 +1,11 @@
-.profile-section[data-title="favorite-organizations"] {
-  .user-fav-orgs {
+.user-profile {
+  .profile-section[data-title="favorite-organizations"] {
     .fav-org {
       margin-bottom: 20px;
-      display: flex;
-      flex-direction: row;
+
       &__logo {
-        margin-right: 15px;
-      }
-      &__content {
-        flex-grow: 2;
-
-        .fav-org__header {
-          display: flex;
-          justify-content: space-between;
-
-          .fav-org__name{
-            font-weight: bold;
-            line-height: 1.33;
-            letter-spacing: 0.2px;
-            color: $text-title;
-            margin-bottom: 5px;
-          }
-        }
-        .fav-org__description {
-          font-size: 14px;
-          line-height: 1.14;
-        }
+        height: 36px;
+        width: 36px;
       }
     }
   }

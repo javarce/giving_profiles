@@ -1,6 +1,6 @@
 // Body
 
-body {
+body, .body {
   font-family: Roboto;
   font-size: 18px;
   font-weight: normal;
@@ -109,10 +109,6 @@ body {
   line-height: 1.33;
   letter-spacing: normal;
   color: $text-toned-down;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
 .body-small {
   font-family: Roboto;
@@ -155,6 +151,16 @@ body {
   letter-spacing: normal;
   color: $text-toned-down;
 }
+.body-xl-title {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.2px;
+  color: $text-title;
+}
 
 // Buttons
 
@@ -181,17 +187,6 @@ body {
   color: $text-light;
 }
 
-// Card Titles
-
-.card-title {
-  color: $text-title;
-  font-family: 'Roboto';
-  font-weight: 900;
-  letter-spacing: 0.2px;
-  font-size: 24px;
-  letter-spacing: normal;
-}
-
 // Headings
 
 .heading {
@@ -203,10 +198,6 @@ body {
   line-height: 1.33;
   letter-spacing: 0.2px;
   color: $text-title;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
 .heading-small {
   font-family: Roboto;
@@ -222,9 +213,7 @@ body {
 // Icons
 
 .icon-dark {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -233,9 +222,7 @@ body {
   color: $theme-secondary;
 }
 .icon-disabled {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -244,9 +231,7 @@ body {
   color: $element-toned-down;
 }
 .icon-light {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -255,9 +240,7 @@ body {
   color: $text-light;
 }
 .icon-medium-dark {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -266,9 +249,7 @@ body {
   color: $theme-secondary;
 }
 .icon-medium-light {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -277,9 +258,7 @@ body {
   color: $text-light;
 }
 .icon-medium-toned-down {
-  font-family: FontAwesome;
   font-size: 16px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -288,9 +267,7 @@ body {
   color: $text-toned-down;
 }
 .icon-toned-down {
-  font-family: FontAwesome;
   font-size: 20px;
-  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -387,8 +364,4 @@ body {
   line-height: 1.33;
   letter-spacing: 1px;
   color: $text-subtitle;
-  @include media-breakpoint-down(sm) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 }

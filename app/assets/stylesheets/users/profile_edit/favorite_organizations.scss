@@ -4,17 +4,15 @@
       margin-bottom: 20px;
 
       &__header {
-        display: flex;
         margin-left: -50px;
-        .fav-org__name_and_type {
-          margin-left: 20px;
-          .fav-org__name {
-            color: $text-title;
-          }
-          .org-type-oval {
-            margin-left: 0px;
-          }
+        
+        .org-type-oval {
+          display: inline-block;
         }
+      }
+      &__logo {
+        height: 36px;
+        width: 36px;
       }
       &__description {
         height: 75px;

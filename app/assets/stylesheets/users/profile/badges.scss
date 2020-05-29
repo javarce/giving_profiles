@@ -1,11 +1,40 @@
-.profile-section[data-title="badges"] {
-  .badges-row {
-    .donation-badge {
-      font-size: 32px;
+.user-profile {
+  .profile-section[data-title="badges"] {
+    .badge-row {
+      .badge {
+        width: 48px;
+        height: 48px;
+        font-size: 32px;
+        border: 2px solid;
+        border-radius: 25%;
 
-      &:not(:last-child) {
-        margin-right: 24px;
+        &:hover {
+          opacity: 100%;
+          border: 3px solid;
+        }
       }
+      .bg_color_income, .bg_color_highly_effective, .bg_color_local {
+        background-color: $category-unknown;
+        color: $theme-secondary;
+      }
+      .badge_tier_1 {
+        opacity: 60%;
+      }
+      .badge_tier_2 {
+        opacity: 70%
+      }
+      .badge_tier_3 {
+        opacity: 80%
+      }
+      .badge_tier_4 {
+        opacity: 90%
+      }
+      .badge_tier_5 {
+        opacity: 100%
+      }
+    }
+    .badge-description {
+      text-align: center;
     }
   }
 }

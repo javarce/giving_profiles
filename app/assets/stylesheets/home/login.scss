@@ -17,10 +17,6 @@
     margin-top: 80px;
     padding-top: 20px;
     border-radius: 12px;
-
-    .card-title {
-      margin-bottom: 16px;
-    }
   }
   @include media-breakpoint-up(lg) {
     .card {
@@ -28,18 +24,19 @@
       margin-top: 100px;
     }
   }
-  &__facebook-icon {
-    color: $gp-white;
-    background-color: $facebook-blue;
-  }
   &__facebook-button {
-    height: 48px;
-    font-size: 1rem;
-    color: $gp-white;
+    @extend .body-light;
+
+    padding: 12px 16px;
     background-color: $facebook-blue;
-    a {
-      color: inherit;
+
+    &:hover {
+      color: $text-light;
+      opacity: 90%;
     }
+  }
+  &__facebook-icon {
+    font-size: 24px;
   }
   small {
     margin-top: 12px;

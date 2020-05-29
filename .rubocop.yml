@@ -60,6 +60,8 @@ Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: false
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: false
 Style/ExponentialNotation:
   Enabled: false
 Style/SlicingWithRange:

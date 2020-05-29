@@ -57,27 +57,26 @@ class UsersController < ApplicationController
     @badges = @user.badges
   end
 
-  # PLACEHOLDER
   def cause_logos
     {
       "animals" => "paw",
-      "community" => "users",
+      "community_development" => "home",
       "education" => "graduation-cap",
       "environment" => "tree",
       "health" => "medkit",
-      "human_rights" => "street-view",
-      "human_services" => "child",
+      "human_rights" => "dove",
+      "human_services" => "users",
       "international" => "globe",
-      "religion" => "chrome",
+      "religion" => "praying-hands",
       "unknown" => "question"
     }
   end
 
   def badge_logos
     cause_logos.merge({
-                        income: "usd",
-                        highly_effective: "check",
-                        local: "map-marker"
+                        "income" => "dollar-sign",
+                        "highly_effective" => "check-circle",
+                        "local" => "street-view"
                       })
   end
 

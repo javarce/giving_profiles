@@ -1,11 +1,16 @@
 <% org_type = user_fav_org.organization.org_type %>
-<div class="fav-org">
-  <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo" %> <!-- placeholder for now -->
-  <div class="fav-org__content">
-    <div class="fav-org__header">
-      <div class="fav-org__name"><%= user_fav_org.organization.name %></div>
+<div class="fav-org d-flex flex-row">
+  <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo mr-3" %> <!-- placeholder for now -->
+  <div class="flex-fill">
+    <div class="d-flex justify-content-between">
+      <div class="heading mb-2">
+        <%= user_fav_org.organization.name %>
+        <% if user_fav_org.organization.highly_effective %>
+          <%= fa_icon "check-circle" %>
+        <% end %>
+      </div>
       <%= render "shared/org_type_oval", org_type: org_type %>
     </div>
-    <div class="fav-org__description"><%= user_fav_org.description %></div>
+    <div class="body-medium"><%= user_fav_org.description %></div>
   </div>
 </div>

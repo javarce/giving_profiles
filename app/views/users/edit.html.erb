@@ -1,7 +1,7 @@
 <div class="user-profile-edit container-fluid">
 <%= render partial: "partials/flash" %>
-<%= form_for(@user, remote: true, html: { class: "user-profile-edit__form" }) do |f| %>
-  <%= render "users/profile_edit/profile_pic", form: f %>
+<%= form_for(@user, remote: true, html: { class: "d-flex align-items-start justify-content-between" }) do |f| %>
+  <%= image_tag(@user.profile_image, class: "rounded-circle avatar") %>
   <div class="editable-content">
     <%= render "users/profile_edit/user_info", form: f %>
     <%= render "users/profile_edit/philosophy", form: f %>
