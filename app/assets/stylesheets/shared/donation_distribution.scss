@@ -18,7 +18,7 @@
         }
         &:not(:first-child) {
             @extend .body-small;
-            @extend .ml-1;
+            margin-left: 4px;
 
             .donation-bar__under-bar {
                 display: none;

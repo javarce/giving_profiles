@@ -1,4 +1,4 @@
-<%= render "users/profile/profile_section", title: "BADGES"  do %>
+<%= render "users/profile/profile_section", title: "Badges"  do %>
   <div class="d-flex flex-column align-items-center">
     <div class="badge-row d-flex justify-content-center flex-wrap">
       <% @badges.each do |badge, tier, description| %>
@@ -6,10 +6,10 @@
           data-tier="<%= tier %>"
           data-description="<%= description %>"
           class="badge d-flex justify-content-center align-items-center bg_color_<%= badge %> badge_tier_<%= tier %> mb-3 mx-2">
-          <%= fa_icon badge_logos[badge] %>
+          <%= fa_icon "#{badge_logos[badge]} 2x" %>
         </div>
       <% end %>
     </div>
-    <div class="badge-description body-small-toned-down"></div>
+    <div class="badge-description text-center body-small-toned-down"></div>
   </div>
 <% end %>

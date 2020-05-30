@@ -1,12 +1,11 @@
-<div class="user-profile container-fluid">
+<div class="user-profile">
   <%= render partial: "partials/flash" %>
   <%= render template: "layouts/user_header" %>
   <div class="profile-sections pt-4">
-      <%= render "users/profile/badges" %>
-      <%= render "users/profile/philosophy" %>
-      <%= render "users/profile/donations_by_causes" %>
-      <%= render "users/profile/favorite_organizations" %>
-      <%= render "users/profile/past_donations" %>
-    </div>
+    <%= render "users/profile/badges" %>
+    <%= render "users/profile/philosophy" %>
+    <%= render "users/profile/donations_by_causes" %>
+    <%= render "users/profile/favorite_organizations" %>
+    <%= render "users/profile/past_donations" %>
   </div>
 </div>

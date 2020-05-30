@@ -1,14 +1,17 @@
-<div class="user-profile-edit container-fluid">
+<div class="user-profile-edit">
 <%= render partial: "partials/flash" %>
 <%= form_for(@user, remote: true, html: { class: "d-flex align-items-start justify-content-between" }) do |f| %>
   <%= image_tag(@user.profile_image, class: "rounded-circle avatar") %>
-  <div class="editable-content">
+  <div class="editable-content flex-grow-1">
     <%= render "users/profile_edit/user_info", form: f %>
     <%= render "users/profile_edit/philosophy", form: f %>
     <%= render "users/profile_edit/donations_by_causes", form: f %>
     <%= render "users/profile_edit/favorite_organizations", form: f %>
     <%= render "users/profile_edit/yearly_income", form: f %>
   </div>
-  <%= render "users/profile_edit/action_buttons", form: f %>
+  <div class="flex-grow-1 action-buttons">
+    <%= f.submit "Save Profile", class: "button-dark mb-3" %>
+    <%= link_to "Cancel", @user, class: "button-light" %>
+  </div>
 <% end %>
 </div>

@@ -1,18 +1,14 @@
-<header class="page-header d-flex">
-  <div class='logo-header'>
-    <%= link_to "GIVING PROFILES", "/" %>
-  </div>
-
-  <div class='page-header__search'>
-    <%= form_tag(search_path, method: "get") do %>
+<header class="page-header d-flex align-items-center">
+  <%= link_to "GIVING PROFILES", "/", class: "logo-header my-3" %>
+  <div class="page-header__search ml-3">
+    <%= form_tag search_path, method: "get" do %>
       <%= fa_icon "search" %>
-      <%= text_field_tag :query, nil, placeholder: "Search...", class: "border-0 page-header__search__input" %>
+      <%= text_field_tag :query, nil, placeholder: "Search...", class: "border-0" %>
     <% end %>
   </div>
-
   <% if user_signed_in? %>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "page-header__login-button button-light" %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "page-header__login-button button-dark" %>
   <% elsif !login_page? %>
-    <%= link_to "Log In", root_path, class: "page-header__login-button button-light" %>
+    <%= link_to "Log In", root_path, class: "page-header__login-button button-dark" %>
   <% end %>
 </header>

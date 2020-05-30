@@ -15,16 +15,21 @@ body {
   position: absolute;
   bottom: 0;
 
-  color:$element-toned-down;
+  color: $element-toned-down;
   &--login {
     color: $text-light;
   }
 
+  padding-left: 15px;
+  padding-right: 15px;
   @include media-breakpoint-up(lg) {
     padding-left: 156px;
     padding-right: 156px;
   }
 
+  & > * {
+    flex: 1;
+  }
   &__copyright {
     @include media-breakpoint-down(sm) {
       font-size: 12px;

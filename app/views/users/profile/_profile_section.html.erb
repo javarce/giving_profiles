@@ -1,7 +1,5 @@
-<div class="profile-section" data-title="<%= title.downcase.parameterize %>">
-  <span class="title-section">
-    <%= title %>
-  </span>
+<div class="profile-section" data-title="<%= title.parameterize %>">
+  <span class="subtitle"><%= title %></span>
   <hr class="divider">
   <%= yield %>
 </div>

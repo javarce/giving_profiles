@@ -1,5 +1,4 @@
 // Body
-
 body, .body {
   font-family: Roboto;
   font-size: 18px;
@@ -10,358 +9,188 @@ body, .body {
   letter-spacing: normal;
   color: $text-body;
 }
+.body-bold {
+  @extend .body;
+  font-weight: bold;
+  color: $theme-secondary;
+}
 .body-dark {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
+  @extend .body;
   color: $theme-secondary;
 }
 .body-destructive {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
+  @extend .body;
   color: $error;
 }
 .body-emphasis {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
+  @extend .body;
   color: $text-title;
 }
 .body-light {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
+  @extend .body;
   color: $text-light;
 }
-.body-medium, label {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  color: $text-body;
-}
-.body-medium-bold {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  color: $text-body;
-}
-.body-medium-emphasis {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  color: $theme-secondary;
-}
-.body-medium-toned-down {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  color: $text-toned-down;
-}
 .body-thin {
-  font-family: Roboto;
-  font-size: 18px;
+  @extend .body;
   font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
   color: $text-toned-down;
 }
 .body-toned-down {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
+  @extend .body;
   color: $text-toned-down;
 }
-.body-small {
-  font-family: Roboto;
+
+// Medium Body
+label, .body-medium {
+  @extend .body;
+  font-size: 14px;
+  line-height: 1.14;
+}
+.body-medium-bold {
+  @extend .body-medium;
+  font-weight: bold;
+  color: $theme-secondary;
+}
+.body-medium-emphasis {
+  @extend .body-medium;
+  color: $theme-secondary;
+}
+.body-medium-toned-down {
+  @extend .body-medium;
+  color: $text-toned-down;
+}
+
+// Small Body
+small, .body-small {
+  @extend .body;
   font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: normal;
-  letter-spacing: normal;
-  color: $text-body;
 }
 .body-small-bold {
-  font-family: Roboto;
-  font-size: 12px;
+  @extend .body-small;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
   color: $theme-secondary;
-}
-.body-small-center {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $text-body;
 }
 .body-small-toned-down {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  @extend .body-small;
   color: $text-toned-down;
-}
-.body-xl-title {
-  font-family: Roboto;
-  font-size: 24px;
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 0.2px;
-  color: $text-title;
-}
-
-// Buttons
-
-.button-dark {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
-  text-align: center;
-  color: $theme-secondary;
-}
-.button-light {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
-  text-align: center;
-  color: $text-light;
 }
 
 // Headings
-
 .heading {
-  font-family: Roboto;
-  font-size: 18px;
+  @extend .body;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
   letter-spacing: 0.2px;
   color: $text-title;
 }
-.heading-small {
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: 0.1px;
+.subheading {
+  @extend .body;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: $text-toned-down;
+  text-transform: uppercase;
+}
+
+// Titles
+.title {
+  @extend .body;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
   color: $text-title;
 }
 
-// Icons
+.subtitle {
+  @extend .body;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $text-subtitle;
+  text-transform: uppercase;
+}
 
-.icon-dark {
+// Buttons
+.button {
+  @extend .body;
+  font-weight: 500;
+  text-align: center;
+}
+.button-dark {
+  color: $text-light;
+}
+.button-light {
+  color: $theme-secondary;
+}
+
+// Icons
+i, .icon {
   font-size: 20px;
+  font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+}
+.icon-dark {
+  @extend .icon;
   color: $theme-secondary;
 }
 .icon-disabled {
-  font-size: 20px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  @extend .icon;
   color: $element-toned-down;
 }
 .icon-light {
-  font-size: 20px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  @extend .icon;
   color: $text-light;
 }
-.icon-medium-dark {
+.icon-toned-down {
+  @extend .icon;
+  color: $text-toned-down;
+}
+
+// Medium Icons
+.icon-medium {
+  @extend .icon;
   font-size: 16px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+}
+.icon-medium-dark {
+  @extend .icon-medium;
   color: $theme-secondary;
 }
+.icon-medium-disabled {
+  @extend .icon-medium;
+  color: $element-toned-down;
+}
 .icon-medium-light {
-  font-size: 16px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  @extend .icon-medium;
   color: $text-light;
 }
 .icon-medium-toned-down {
-  font-size: 16px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $text-toned-down;
-}
-.icon-toned-down {
-  font-size: 20px;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  @extend .icon-medium;
   color: $text-toned-down;
 }
 
 // Logo
-
 .logo-footer {
-  font-family: Roboto;
+  @extend .body;
   font-size: 36px;
   font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
   letter-spacing: 2px;
   color: inherit;
 }
 .logo-header {
-  font-family: Roboto;
+  @extend .body;
   font-size: 12px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
   line-height: normal;
-  letter-spacing: normal;
   color: $theme-secondary;
 }
 
 // Overflow
-
 .overflow-ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-// Tags
-
-.tag {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: $text-toned-down;
-}
-.tag-center {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $text-toned-down;
-}
-.tag-dark {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $theme-secondary;
-}
-.tag-light {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $text-light;
-}
-
-// Title Sections
-
-.title-section {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 1px;
-  color: $text-subtitle;
 }

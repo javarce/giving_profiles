@@ -1,9 +1,9 @@
 .user-header {
   &__image {
-    width: 104px;
-    height: 104px;
     object-fit: cover;
 
+    width: 104px;
+    height: 104px;
     @include media-breakpoint-down(md) {
       max-height: 52px;
       max-width: 52px;
@@ -24,10 +24,9 @@
     a {
       width: 140px;
       height: 48px;
-
       @include media-breakpoint-down(md) {
-        height: 36px;
         width: 36px;
+        height: 36px;
       }
       span {
         padding-left: 4px;
@@ -40,9 +39,11 @@
     }
   }
   &__edit {
-    @include media-breakpoint-up(lg) {
-      width: 296px;
-      height: 48px;
+    width: 296px;
+    height: 48px;
+    @include media-breakpoint-down(md) {
+      width: 140px;
+      height: 36px;
     }
   }
 }

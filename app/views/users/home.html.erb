@@ -1,6 +1,6 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=2244551272451887&autoLogAppEvents=1"></script>
-<div class="user-home container-fluid">
+<div class="user-home">
   <%= render partial: "partials/flash" %>
   <%= render template: "layouts/user_header" %>
   <div class="user-home__sections">
@@ -82,7 +82,7 @@
                 <% end %>
                 <div class="col-10 col-lg-9">
                   <div class="user-home__card__header">
-                    <%= link_to donation.user.name, donation.user, class: "align-top user-home__card__donor-name heading" %>
+                    <%= link_to donation.user.name, donation.user, class: "heading align-top user-home__card__donor-name" %>
                     <div class="donated-to-text"> Donated to</div>
                   </div>
                   <div class="align-top user-home__card__organization body-medium"><%= donation.organization.name %></div>
