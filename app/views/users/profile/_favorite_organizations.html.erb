@@ -1,4 +1,4 @@
-<%= render "users/profile/profile_section", title: "FAVORITE ORGANIZATIONS"  do %>
+<%= render "users/profile/profile_section", title: "Favorite Organizations"  do %>
   <% @user.user_favorite_organizations[0..3].each do |user_fav_org| %> <!-- show only 4 favorite organizations for now. -->
     <%= render "users/profile/favorite_organization", user_fav_org: user_fav_org %>
   <% end %>

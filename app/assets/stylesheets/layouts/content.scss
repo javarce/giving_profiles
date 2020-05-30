@@ -2,8 +2,10 @@
   margin-top: 60px;
   margin-bottom: 40px;
 
+  padding-left: 15px;
+  padding-right: 15px;
   @include media-breakpoint-up(lg) {
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: 156px;
+    padding-right: 156px;
   }
 }

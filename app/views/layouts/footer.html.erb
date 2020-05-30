@@ -1,15 +1,9 @@
-<footer class="container-fluid page-footer <%= "page-footer--login" if login_page? %>">
-  <div class="row d-flex align-items-end">
-    <div class="logo-footer col-4 text-left">
-      GIVING<br>PROFILES
-    </div>
-    <div class="page-footer__copyright text-md-center col col-md-4 col-lg-3">
-      2017 - 2020 © Giving Profiles
-    </div>
-    <div class="page-footer__static-pages col-8 col-md-4 col-lg-5 text-right">
-      <%= link_to "About", "/about", class: "pr-3" %>
-      <%= link_to "Contact", "/contact", class: "px-3 border-right border-left" %>
-      <%= link_to "Policy", "/policy", class: "pl-3" %>
-    </div>
-  </div>
+<footer class="page-footer <%= "page-footer--login" if login_page? %> w-100 d-flex align-items-end">
+  <span class="page-footer__logo logo-footer text-left">GIVING<br>PROFILES</span>
+  <span class="page-footer__copyright text-center">2017 - 2020 © Giving Profiles</span>
+  <span class="page-footer__static-pages text-right">
+    <%= link_to "About", "/about", class: "pr-3" %>
+    <%= link_to "Contact", "/contact", class: "px-3 border-right border-left" %>
+    <%= link_to "Policy", "/policy", class: "pl-3" %>
+  </span>
 </footer>

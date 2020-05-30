@@ -4,9 +4,9 @@
       margin-bottom: 12px;
 
       .avatar {
+        object-fit: cover;
         height: 36px;
         width: 36px;
-        object-fit: cover;
       }
     }
     .past-donations {

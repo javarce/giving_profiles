@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.29)), no-repeat, image-url("BackgroundImage.jpg");
+
     /* Preserve aspect ratio */
     background-size: 110% auto;
     @include media-breakpoint-down(md) {
@@ -17,9 +18,8 @@
     margin-top: 80px;
     padding-top: 20px;
     border-radius: 12px;
-  }
-  @include media-breakpoint-up(lg) {
-    .card {
+
+    @include media-breakpoint-up(lg) {
       min-width: 350px;
       margin-top: 100px;
     }
@@ -38,9 +38,8 @@
   &__facebook-icon {
     font-size: 24px;
   }
-  small {
+  &__credit {
     margin-top: 12px;
-    float: right;
 
     a {
       color: inherit;

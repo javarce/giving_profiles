@@ -1,8 +1,8 @@
 // Base CSS
 @import "helpers/variables";
-@import "base/normalize";
 @import "bootstrap";
 @import "font_awesome5_webfont";
+@import "base/normalize";
 @import "base/org_types";
 @import "base/text_styles";
 
@@ -18,11 +18,11 @@
 @import "shared/donation_distribution";
 @import "shared/org_type_oval";
 
-// Home CSS
+// Home Controller CSS
 @import "home";
 
-// Search CSS
+// Search Controller CSS
 @import "search";
 
-// Users CSS
+// Users Controller CSS
 @import "users";

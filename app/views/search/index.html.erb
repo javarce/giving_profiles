@@ -1,19 +1,19 @@
 <div class="search-results container">
 
   <div class="row justify-content-between">
-    <h2 class="pl-3 pl-md-0 title-section">FILTER BY</h2>
+    <h2 class="pl-3 pl-md-0 subtitle">Filter By</h2>
     <h3 class="col body-toned-down text-right">Clear All</h3>
   </div>
   <div class="row">
     <div class="pl-3 pl-md-0 mt-3">
-      <div class="button-dark">Badge</div>
-      <div class="button-dark">Category</div>
+      <div class="button-light">Badge</div>
+      <div class="button-light">Category</div>
     </div>
   </div>
 
   <% if @users.present? %>
     <div class="row justify-content-between mt-3">
-      <h2 class="pl-3 pl-md-0 title-section">PEOPLE</h2>
+      <h2 class="pl-3 pl-md-0 subtitle">People</h2>
       <div class="col body-toned-down text-right d-lg-none">
         <%= link_to "See All", user_search_results_path(@query) %>
       </div>
@@ -48,7 +48,7 @@
 
   <% if @organizations.present? %>
     <div class="row justify-content-between mt-4">
-      <h2 class="pl-3 pl-md-0 title-section">ORGANIZATIONS</h2>
+      <h2 class="pl-3 pl-md-0 subtitle">Organizations</h2>
       <h3 class="col body-toned-down text-right d-lg-none">
         <%= link_to "See All", organization_search_results_path(@query) %>
       </h3>
