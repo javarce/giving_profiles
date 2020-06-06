@@ -1,5 +1,6 @@
-<%= render "users/profile/profile_section", title: "Favorite Organizations"  do %>
+<%= render "users/profile/profile_section", title: "Favorite Organizations" do %>
   <div class="user-fav-orgs-list">
-    <%= render partial: "users/profile_edit/favorite_organization", collection: @user_fav_orgs, locals: { form: form } %>
+    <%= render partial: "users/profile_edit/favorite_organization", collection: @user.user_favorite_organizations, locals: { form: form } %>
   </div>
+  <!-- TODO: search and add favorite organization -->
 <% end %>

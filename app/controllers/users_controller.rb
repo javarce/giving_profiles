@@ -9,9 +9,7 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def edit
-    @user_fav_orgs = @user.user_favorite_organizations[0..3]
-  end
+  def edit; end
 
   def update
     @user = User.find(params[:id])
@@ -46,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def user
-    @user = User.includes(donations: :organization, user_favorite_organizations: :organization).find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def donations_by_causes
@@ -90,7 +88,7 @@ class UsersController < ApplicationController
                                  :yearly_income,
                                  :organization_name,
                                  :amount,
-                                 user_favorite_organizations_attributes: %i[id description])
+                                 user_favorite_organizations_attributes: %i[id description rank])
   end
 
   def ensure_current_user

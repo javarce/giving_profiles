@@ -1,11 +1,10 @@
 .user-profile-edit {
   .profile-section[data-title="favorite-organizations"] {
     .fav-org {
+      margin-left: -50px;
       margin-bottom: 20px;
 
       &__header {
-        margin-left: -50px;
-        
         .org-type-oval {
           display: inline-block;
         }
@@ -14,10 +13,33 @@
         height: 36px;
         width: 36px;
       }
+      &__buttons {
+        width: 36px;
+
+        & > * {
+          cursor: pointer;
+
+          &:hover {
+            @extend .icon-dark;
+          }
+        }
+      }
       &__description {
         height: 75px;
         resize: none;
         margin-top: 5px;
+      }
+      &:first-child {
+        .fav-org__buttons__up {
+          @extend .icon-disabled;
+          cursor: default;
+        }
+      }
+      &:last-child {
+        .fav-org__buttons__down {
+          @extend .icon-disabled;
+          cursor: default;
+        }
       }
     }
   }

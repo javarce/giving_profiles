@@ -2,8 +2,8 @@
 <div class="fav-org">
   <%= form.fields_for :user_favorite_organizations, favorite_organization do |fav_org_fields| %>
     <div class="fav-org__header d-flex">
-      <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo" %> <!-- placeholder for now -->
-      <div class="ml-3">
+      <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo mr-3" %> <!-- placeholder for now -->
+      <div>
         <div class="body-emphasis">
           <%= favorite_organization.organization.name %>
           <% if favorite_organization.organization.highly_effective %>
@@ -13,7 +13,14 @@
         <%= render "shared/org_type_oval", org_type: org_type %>
       </div>
     </div>
-    <%= fav_org_fields.text_area :description, class: "form-control fav-org__description", placeholder: "I like/donate to this organization for..." %>
+    <div class="fav-org__content d-flex align-items-center">
+      <div class="fav-org__buttons d-flex flex-column mr-3">
+        <%= fa_icon "arrow-circle-up", class: "fav-org__buttons__up my-1" %>
+        <%= fa_icon "arrow-circle-down", class: "fav-org__buttons__down my-1" %>
+      </div>
+      <%= fav_org_fields.text_area :description, class: "form-control fav-org__description", placeholder: "I like/donate to this organization for..." %>
+    </div>
     <%= fav_org_fields.hidden_field :id, class: "fav-org__id" %>
+    <%= fav_org_fields.hidden_field :rank, class: "fav-org__rank" %>
   <% end %>
 </div>

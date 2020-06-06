@@ -10,7 +10,7 @@ feature 'User profile edit', js: true do
     fill_in 'user_last_name', with: 'Okoye'
     fill_in 'user_email', with: 'mokoye@gmail.com'
     fill_in 'user_philosophy', with: 'Anything worth doing, is worth doing well.'
-    fill_in 'user_user_favorite_organizations_attributes_0_description', with: 'New favorite organization description.'
+    # fill_in 'user_user_favorite_organizations_attributes_0_description', with: 'New favorite organization description.'
     click_button 'Save Profile'
 
     within(".flash__container") do
