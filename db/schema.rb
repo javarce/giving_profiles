@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_034921) do
+ActiveRecord::Schema.define(version: 2020_06_06_032329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_034921) do
     t.bigint "user_id"
     t.bigint "organization_id"
     t.string "description"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_user_favorite_organizations_on_organization_id"
