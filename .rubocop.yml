@@ -46,17 +46,27 @@ Metrics/BlockLength:
 # In the future the solution outlined on this page should be used: https://docs.rubocop.org/en/latest/versioning/
 # However, this is parameter not yet supported -- see https://stackoverflow.com/questions/61108623/vscode-rubocop-complaining-about-unconfigured-cops
 # We should also consider whether we actually want to enable any of these.
+# Layout/SpaceAroundMethodCallOperator:
+#   Enabled: false
+# Layout/EmptyLinesAroundAttributeAccessor:
+#   Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
+# Lint/DeprecatedOpenSSLConstant:
+#   Enabled: false
+# Lint/MixedRegexpCaptureTypes:
+#   Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: false
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
+# Style/ExponentialNotation:
+#   Enabled: false
+# Style/SlicingWithRange:
+#   Enabled: false
+# Style/RedundantRegexpEscape:
+#   Enabled: false
