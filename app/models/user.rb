@@ -81,6 +81,15 @@ class User < ApplicationRecord
     donation_total.positive? ? local_donation_total / donation_total : 0
   end
 
+  def map_cause_donations(cause_donations)
+    cause_donations.map do |c, a|
+      [
+        c, (a.to_f / cause_donations.values.sum),
+        "Over \#{PERCENTAGE}% of #{name}'s donations have been to #{c.humanize capitalize: false} organizations."
+      ]
+    end
+  end
+
   def badge_tiers(badges)
     thresholds = [0.1, 0.3, 0.5, 0.7, 0.9]
     badges.sort_by { |_b, p, _d| -p }
@@ -90,12 +99,16 @@ class User < ApplicationRecord
 
   def badges
     @badges ||= badge_tiers([
-      ["income", income_percentage, "of yearly income"],
-      ["highly_effective", highly_effective_percentage, "to highly effective charities"],
-      ["local", local_percentage, "to local charities"]
-    ] + cause_donations.map do |c, a|
-          [c, (a.to_f / cause_donations.values.sum), "to #{c.humanize capitalize: false} organizations"]
-        end)
+      ["income", income_percentage, "#{name} has donated over \#{PERCENTAGE}% of their income."],
+      [
+        "highly_effective", highly_effective_percentage,
+        "Over \#{PERCENTAGE}% of #{name}'s donations have been to highly effective organizations."
+      ],
+      [
+        "local", local_percentage,
+        "Over \#{PERCENTAGE}% of #{name}’s donations have been to organizations that are local to the area."
+      ]
+    ] + map_cause_donations(cause_donations))
   end
 
   def donations_by_causes

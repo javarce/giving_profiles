@@ -9,7 +9,7 @@
       grid-column: 1 / 4;
       grid-row: 1 / 2;
     }
-    [data-title="donations-by-causes"] {
+    [data-title="causes"] {
       grid-column: 4 / 8;
       grid-row: 1 / 2;
     }
@@ -17,7 +17,7 @@
       grid-column: 8 / 11;
       grid-row: 1 / 4;
     }
-    [data-title="philosophy"] {
+    [data-title="giving-philosophy"] {
       grid-column: 1 / 4;
       grid-row: 2 / 3;
     }
@@ -38,11 +38,11 @@
         grid-column: 1 / 4;
         grid-row: 1 / 2;
       }
-      [data-title="donations-by-causes"] {
+      [data-title="causes"] {
         grid-column: 4 / 8;
         grid-row: 1 / 2;
       }
-      [data-title="philosophy"] {
+      [data-title="giving-philosophy"] {
         grid-column: 1 / 4;
         grid-row: 2 / 3;
       }
@@ -64,11 +64,11 @@
         order: 0;
         margin: 5px;
       }
-      [data-title="philosophy"] {
+      [data-title="giving-philosophy"] {
         order: 1;
         margin: 5px;
       }
-      [data-title="donations-by-causes"] {
+      [data-title="causes"] {
         order: 2;
         margin: 5px;
       }

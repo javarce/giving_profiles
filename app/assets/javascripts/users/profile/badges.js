@@ -20,9 +20,9 @@
     }
     let description = badge.attr("data-description");
     let tier = badge.attr("data-tier");
-    let html = `Donated at least ${tierMap[parseInt(tier)]}% ${description}.`;
+    let html = description.replace("#{PERCENTAGE}", tierMap[parseInt(tier)]);
     if (tier < 5) {
-      html += `<br><br>Unlock next tier at ${tierMap[parseInt(tier) + 1]}%.`
+      html += `<br><br>Next tier unlocks at ${tierMap[parseInt(tier) + 1]}%.`
     }
     $(".badge-description").html(html);
   }
