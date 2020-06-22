@@ -185,6 +185,11 @@ i, .icon {
   color: $theme-secondary;
 }
 
+// General
+.toned-down {
+  color: $element-toned-down;
+}
+
 // Overflow
 .overflow-ellipsis {
   white-space: nowrap;

@@ -7,8 +7,8 @@
         height: 36px;
         width: 36px;
       }
-      .org-type-oval {
-        margin-left: 16px;
+      .cause-label {
+        @extend .ml-3
       }
     }
   }

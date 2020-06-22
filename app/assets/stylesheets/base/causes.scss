@@ -1,0 +1,44 @@
+$cause_colors: (
+  "animals":                #ff7744,
+  "community_development":  #ff88aa,
+  "education":              #1199ee,
+  "environment":            #99cc66,
+  "health":                 #7755cc,
+  "human_rights":           #4455bb,
+  "human_services":         #ffaa22,
+  "international":          #ffcc66,
+  "religion":               #22aa99,
+  "unknown":                $element-toned-down,
+);
+
+$cause_oval_text_colors: (
+  "animals":                $theme-secondary,
+  "community_development":  $theme-secondary,
+  "education":              $theme-secondary,
+  "environment":            $theme-secondary,
+  "health":                 $text-light,
+  "human_rights":           $text-light,
+  "human_services":         $theme-secondary,
+  "international":          $theme-secondary,
+  "religion":               $theme-secondary,
+  "unknown":                $theme-secondary,
+);
+
+
+@each $key, $color in $cause_colors {
+  .color_#{$key} {
+    color: $color !important;
+  }
+}
+
+@each $key, $color in $cause_colors {
+  .bg_color_#{$key} {
+    background-color: $color !important;
+  }
+}
+
+@each $key, $color in $cause_oval_text_colors {
+  .bg_color_#{$key} {
+    color: $color !important;
+  }
+}

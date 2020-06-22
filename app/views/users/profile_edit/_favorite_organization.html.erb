@@ -1,8 +1,7 @@
-<% org_type = favorite_organization.organization.org_type %>
 <div class="fav-org">
   <%= form.fields_for :user_favorite_organizations, favorite_organization do |fav_org_fields| %>
     <div class="fav-org__header d-flex">
-      <%= fa_icon "#{cause_logos[org_type]} 2x", class: "fav-org__logo mr-3" %> <!-- placeholder for now -->
+      <%= fa_icon "#{cause_logos[favorite_organization.organization.org_type]} 2x", class: "fav-org__logo mr-3" %> <!-- placeholder for now -->
       <div>
         <div class="body-emphasis">
           <%= favorite_organization.organization.name %>
@@ -10,7 +9,7 @@
             <%= fa_icon "check-circle" %>
           <% end %>
         </div>
-        <%= render "shared/org_type_oval", org_type: org_type %>
+        <%= render "shared/cause_label", cause: favorite_organization.organization.org_type %>
       </div>
     </div>
     <div class="fav-org__content d-flex align-items-center">
