@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   pg_search_scope :search_by_name_email_location, against: %i[first_name last_name email location]
 
+  has_many :user_favorite_causes, -> { order(:rank) }, dependent: :destroy
+  has_many :favorite_causes, through: :user_favorite_causes
   has_many :user_favorite_organizations, -> { order(:rank) }, dependent: :destroy
   has_many :favorite_organizations, through: :user_favorite_organizations, source: :organization
   has_many :donations, dependent: :destroy

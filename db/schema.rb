@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_032329) do
+ActiveRecord::Schema.define(version: 2020_06_22_051441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2020_06_06_032329) do
     t.string "name", null: false
     t.string "fb_url"
     t.string "org_type", default: "unknown"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "location", default: ""
     t.string "avatar_url", default: "default_avatar.png"
     t.boolean "highly_effective", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["fb_url"], name: "index_organizations_on_fb_url", unique: true
     t.index ["location"], name: "index_organizations_on_location"
     t.index ["name"], name: "index_organizations_on_name", unique: true
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 2020_06_06_032329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
+  create_table "user_favorite_causes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "cause"
+    t.string "description"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cause"], name: "index_user_favorite_causes_on_cause"
+    t.index ["user_id", "cause"], name: "index_user_favorite_causes_on_user_id_and_cause", unique: true
+    t.index ["user_id"], name: "index_user_favorite_causes_on_user_id"
   end
 
   create_table "user_favorite_organizations", force: :cascade do |t|
@@ -64,20 +76,20 @@ ActiveRecord::Schema.define(version: 2020_06_06_032329) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "favorite_cause_description"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "encrypted_password"
+    t.string "avatar_url"
+    t.string "fb_url"
+    t.string "uid"
+    t.string "provider"
+    t.string "location"
     t.string "philosophy"
+    t.string "favorite_cause_description"
     t.integer "yearly_income"
     t.boolean "deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "location"
-    t.string "encrypted_password"
-    t.string "avatar_url"
-    t.string "provider"
-    t.string "uid"
-    t.string "fb_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
