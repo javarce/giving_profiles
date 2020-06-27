@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_051441) do
+ActiveRecord::Schema.define(version: 2020_06_27_214411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,16 +29,16 @@ ActiveRecord::Schema.define(version: 2020_06_22_051441) do
   create_table "organizations", force: :cascade do |t|
     t.string "name", null: false
     t.string "fb_url"
-    t.string "org_type", default: "unknown"
+    t.string "cause", default: "unknown"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "location", default: ""
     t.string "avatar_url", default: "default_avatar.png"
     t.boolean "highly_effective", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["cause"], name: "index_organizations_on_cause"
     t.index ["fb_url"], name: "index_organizations_on_fb_url", unique: true
     t.index ["location"], name: "index_organizations_on_location"
     t.index ["name"], name: "index_organizations_on_name", unique: true
-    t.index ["org_type"], name: "index_organizations_on_org_type"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 2020_06_22_051441) do
     t.bigint "user_id"
     t.bigint "organization_id"
     t.string "description"
-    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rank"
     t.index ["organization_id"], name: "index_user_favorite_organizations_on_organization_id"
     t.index ["user_id", "organization_id"], name: "index_user_fav_orgs_on_user_id_and_org_id", unique: true
     t.index ["user_id"], name: "index_user_favorite_organizations_on_user_id"
@@ -76,20 +76,19 @@ ActiveRecord::Schema.define(version: 2020_06_22_051441) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "encrypted_password"
-    t.string "avatar_url"
-    t.string "fb_url"
-    t.string "uid"
-    t.string "provider"
-    t.string "location"
     t.string "philosophy"
-    t.string "favorite_cause_description"
     t.integer "yearly_income"
     t.boolean "deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "location"
+    t.string "encrypted_password"
+    t.string "avatar_url"
+    t.string "provider"
+    t.string "uid"
+    t.string "fb_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"

@@ -52,8 +52,8 @@ class User < ApplicationRecord
   def cause_donations
     @cause_donations ||= Donation.joins(:organization)
                                  .where("user_id = ?", id)
-                                 .select(:org_type, :amount)
-                                 .group(:org_type)
+                                 .select(:cause, :amount)
+                                 .group(:cause)
                                  .sum(:amount)
   end
 
@@ -113,9 +113,9 @@ class User < ApplicationRecord
     ] + map_cause_donations(cause_donations))
   end
 
-  def donations_by_causes
-    @donations_by_causes ||= cause_donations.sort_by { |_, a| -a }
-                                            .map { |c, a| [c, (100 * a.to_f / cause_donations.values.sum).round] }
+  def donation_distribution
+    @donation_distribution ||= cause_donations.sort_by { |_, a| -a }
+                                              .map { |c, a| [c, (100 * a.to_f / cause_donations.values.sum).round] }
   end
 
   # TODO: move to a helper

@@ -8,30 +8,30 @@ RSpec.describe Organization, type: :model do
       @organization =
           Organization.create(
               name: Faker::Company::name,
-              org_type: Organization.org_types.first.first,
+              cause: Organization.causes.first.first,
               location: "#{Faker::Address.city}, IL"
           )
     end
 
     it "return results if there are matches " do
       name_result = PgSearch.multisearch(@organization.name)
-      org_type_result = PgSearch.multisearch(@organization.org_type)
+      cause_result = PgSearch.multisearch(@organization.cause)
       location_result = PgSearch.multisearch(@organization.location)
 
       expect(name_result.present?).to be true
       expect(name_result.map(&:searchable).include?(@organization)).to be true
       expect(name_result.first.searchable.name).to eq @organization.name
-      allow(@organization).to receive(:org_type).and_return("animals")
+      allow(@organization).to receive(:cause).and_return("animals")
 
-      search_result_org_type = org_type_result.first.searchable.org_type
-      expect(search_result_org_type).to eq @organization.org_type
+      search_result_cause = cause_result.first.searchable.cause
+      expect(search_result_cause).to eq @organization.cause
       expect(location_result.first.searchable.location).to eq @organization.location
       expect(location_result.first.searchable.id).to eq @organization.id
       expect(name_result.present?).to be true
       expect(name_result.map(&:searchable).include?(@organization)).to be true
 
-      expect(org_type_result.present?).to be true
-      expect(org_type_result.map(&:searchable).include?(@organization)).to be true
+      expect(cause_result.present?).to be true
+      expect(cause_result.map(&:searchable).include?(@organization)).to be true
 
       expect(location_result.present?).to be true
       expect(location_result.map(&:searchable).include?(@organization)).to be true

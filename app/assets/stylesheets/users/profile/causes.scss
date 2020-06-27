@@ -1,0 +1,32 @@
+.user-profile {
+  .profile-section[data-title="causes"] {
+    .donation-distribution {
+      display: flex;
+
+      .donation-bar {
+        min-width: 4px;
+
+        &__over-bar {
+          height: 24px;
+        }
+        &__cause {
+          @extend .overflow-ellipsis;
+        }
+        &__under-bar {
+          height: 8px;
+        }
+        &:first-child {
+          @extend .body-small-bold;
+        }
+        &:not(:first-child) {
+          @extend .body-small;
+          margin-left: 4px;
+
+          .donation-bar__under-bar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

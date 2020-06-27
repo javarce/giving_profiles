@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="d-flex align-items-center">
-      <%= render "shared/cause_label", cause: donation.organization.org_type %>
+      <%= render "shared/cause_label", cause: donation.organization.cause %>
       <% if donation.user == current_user %>
         <%= fa_icon "ellipsis-v", class: "donation-card__toggle" %>
       <% end %>

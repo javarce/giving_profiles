@@ -4,7 +4,6 @@ def create_user(first_name, last_name)
       first_name: first_name,
       last_name: last_name,
       email: Faker::Internet.email(name),
-      favorite_cause_description: Faker::Lorem.sentence(rand(4..10)),
       philosophy: [Faker::Quote.matz, Faker::Quote.yoda, Faker::Lorem.paragraph].sample,
       yearly_income: rand(30..3000) * 1000,
       password: "password",
@@ -43,7 +42,7 @@ ActiveRecord::Base.transaction do
     ## NOTE: Org type, avatar_url is being randomly assigned and location hard coded for now until we get a specific mapping.
     orgs.each do |org|
       Organization.create_with(
-        org_type: Organization::org_types.keys.sample,
+        cause: Organization::causes.keys.sample,
         avatar_url: Faker::Avatar.image(
           nil,
           "50x50",
