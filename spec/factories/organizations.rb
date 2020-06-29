@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :organization do
     name {Faker::Company.unique.name}
-    org_type {Organization.org_types.keys.sample}
+    cause {Organization.causes.keys.sample}
     fb_url {Faker::Internet.url(host: 'facebook.com')}
     location {Faker::Address.state}
   end

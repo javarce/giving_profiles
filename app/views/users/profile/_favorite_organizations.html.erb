@@ -1,5 +1,8 @@
-<%= render "users/profile/profile_section", title: "Favorite Organizations"  do %>
-  <% @user.user_favorite_organizations.each do |user_fav_org| %>
-    <%= render "users/profile/favorite_organization", user_fav_org: user_fav_org %>
+<%= render "users/profile/profile_section", title: "Favorite Organizations" do %>
+  <div class="fav-orgs">
+    <%= render partial: "users/profile/favorite_organization", collection: @user.user_favorite_organizations %>
+  </div>
+  <% if @user.user_favorite_organizations.length > 2 %>
+    <%= render "shared/scroll_arrow" %>
   <% end %>
 <% end %>

@@ -1,7 +1,0 @@
-<% if donations_by_causes.present? %>
-  <div class="donation-distribution mb-2">
-    <% donations_by_causes.each do |cause, percent| %>
-      <%= render "shared/donation_bar", cause: cause, percent: percent %>
-    <% end %>
-  </div>
-<% end %>

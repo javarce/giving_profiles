@@ -1,16 +1,26 @@
 <div class="donation-card d-flex flex-column justify-content-between p-3">
-  <div class="d-flex justify-content-between">
-    <div class="d-flex flex-column">
-      <div class="body-medium">Donated to</div>
-      <%= link_to donation.organization.name, donation.organization.fb_url, class: "donation-card__organization body-medium-bold" %>
+  <div class="d-flex align-items-start justify-content-between">
+    <div class="d-flex flex-column w-100">
+      <span class="body-medium">Donated to</span>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="donation-card__organization">
+          <%= link_to past_donation.organization.name, past_donation.organization.fb_url, class: "body-medium-bold" %>
+          <% if past_donation.organization.highly_effective %>
+            <%= fa_icon "check-circle", class: "icon-medium" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <% if donation.user == current_user %>
-      <%= fa_icon "ellipsis-v", class: "donation-card__toggle" %>
-    <% end %>
+    <div class="d-flex align-items-center">
+      <%= render "shared/cause_label", cause: past_donation.organization.cause %>
+      <% if past_donation.user == current_user %>
+        <%= fa_icon "ellipsis-v", class: "donation-card__toggle" %>
+      <% end %>
+    </div>
   </div>
-  <div class="body-small-toned-down"><%= donation.created_at.strftime("%I:%M %p - %b %e, %Y") %></div>
+  <div class="body-small-toned-down"><%= past_donation.created_at.strftime("%I:%M %p - %b %e, %Y") %></div>
 
-  <% if donation.user == current_user %>
+  <% if past_donation.user == current_user %>
     <div class="donation-card__popup align-self-end d-none flex-column">
       <%= link_to "Change to private", "#" %> <!-- Placeholder -->
       <%= link_to "Edit", "#" %> <!-- Placeholder -->

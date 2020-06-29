@@ -1,9 +1,9 @@
 // Base CSS
-@import "helpers/variables";
+@import "base/variables";
 @import "bootstrap";
 @import "font_awesome5_webfont";
-@import "base/normalize";
-@import "base/org_types";
+@import "normalize-rails";
+@import "base/causes";
 @import "base/text_styles";
 
 // Layouts CSS
@@ -15,8 +15,7 @@
 
 // Shared Components CSS
 @import "shared/components";
-@import "shared/donation_distribution";
-@import "shared/org_type_oval";
+@import "shared/cause_label";
 
 // Home Controller CSS
 @import "home";

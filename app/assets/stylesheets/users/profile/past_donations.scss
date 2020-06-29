@@ -11,10 +11,10 @@
     }
     .past-donations {
       &__search {
-        width: fill;
+        width: stretch;
       }
       &__cards {
-        height: 320px;
+        height: 434px;
         overflow-y: scroll;
 
         .donation-card {
@@ -30,6 +30,9 @@
           }
           &__toggle {
             cursor: pointer;
+          }
+          .cause-label {
+            @extend .mx-3
           }
           &__popup {
             position: absolute;

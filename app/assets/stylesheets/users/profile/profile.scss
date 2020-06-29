@@ -5,25 +5,29 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 150px auto auto;
 
-    [data-title="badges"] {
+    [data-title="giving-philosophy"] {
       grid-column: 1 / 4;
       grid-row: 1 / 2;
     }
-    [data-title="donations-by-causes"] {
+    [data-title="badges"] {
+      grid-column: 1 / 4;
+      grid-row: 2 / 4;
+    }
+    [data-title="causes"] {
       grid-column: 4 / 8;
       grid-row: 1 / 2;
     }
-    [data-title="past-donations"] {
-      grid-column: 8 / 11;
-      grid-row: 1 / 4;
-    }
-    [data-title="philosophy"] {
-      grid-column: 1 / 4;
+    [data-title="favorite-causes"] {
+      grid-column: 4 / 8;
       grid-row: 2 / 3;
     }
     [data-title="favorite-organizations"] {
       grid-column: 4 / 8;
-      grid-row: 2 / 4;
+      grid-row: 3 / 4;
+    }
+    [data-title="past-donations"] {
+      grid-column: 8 / 11;
+      grid-row: 1 / 4;
     }
 
 
@@ -34,25 +38,29 @@
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: 150px auto auto;
 
-      [data-title="badges"] {
+      [data-title="giving-philosophy"] {
         grid-column: 1 / 4;
         grid-row: 1 / 2;
       }
-      [data-title="donations-by-causes"] {
+      [data-title="badges"] {
         grid-column: 4 / 8;
         grid-row: 1 / 2;
       }
-      [data-title="philosophy"] {
-        grid-column: 1 / 4;
+      [data-title="causes"] {
+        grid-column: 4 / 8;
         grid-row: 2 / 3;
+      }
+      [data-title="favorite-causes"] {
+        grid-column: 4 / 8;
+        grid-row: 3 / 4;
       }
       [data-title="favorite-organizations"] {
         grid-column: 4 / 8;
-        grid-row: 2 / 4;
+        grid-row: 4 / 5;
       }
       [data-title="past-donations"] {
         grid-column: 1 / 4;
-        grid-row: 3 / 4;
+        grid-row: 2 / 5;
       }
     }
 
@@ -60,24 +68,28 @@
       display: flex;
       flex-direction: column;
 
-      [data-title="badges"] {
+      [data-title="giving-philosophy"] {
         order: 0;
         margin: 5px;
       }
-      [data-title="philosophy"] {
+      [data-title="badges"] {
         order: 1;
         margin: 5px;
       }
-      [data-title="donations-by-causes"] {
+      [data-title="causes"] {
         order: 2;
         margin: 5px;
       }
-      [data-title="past-donations"] {
+      [data-title="favorite-causes"] {
         order: 3;
         margin: 5px;
       }
       [data-title="favorite-organizations"] {
         order: 4;
+        margin: 5px;
+      }
+      [data-title="past-donations"] {
+        order: 5;
         margin: 5px;
       }
     }

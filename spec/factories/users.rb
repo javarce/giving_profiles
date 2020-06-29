@@ -14,5 +14,14 @@ FactoryBot.define do
         create_list(:user_fav_org, evaluator.num_fav_orgs, user: user)
       end
     end
+
+    factory :user_with_favorite_cause do
+      transient do
+        num_favorite_causes { 1 }
+      end
+      after(:create) do |user, evaluator|
+        create_list(:user_favorite_cause, evaluator.num_favorite_causes, user: user)
+      end
+    end
   end
 end

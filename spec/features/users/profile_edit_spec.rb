@@ -21,7 +21,7 @@ feature 'User profile edit', js: true do
       expect(page).to have_content "Mia Okoye"
     end
 
-    within('.profile-section[data-title="philosophy"]') do
+    within('.profile-section[data-title="giving-philosophy"]') do
       expect(page).to have_content "Anything worth doing, is worth doing well."
     end
 

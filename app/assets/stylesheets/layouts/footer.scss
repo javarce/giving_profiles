@@ -9,16 +9,17 @@ body {
 }
 
 .page-footer {
+  @extend .toned-down;
+}
+.page-footer--login {
+  @extend .body-light;
+}
+.page-footer, .page-footer--login {
   background: transparent;
   height: 96px;
   margin-bottom: 40px;
   position: absolute;
   bottom: 0;
-
-  color: $element-toned-down;
-  &--login {
-    color: $text-light;
-  }
 
   padding-left: 15px;
   padding-right: 15px;

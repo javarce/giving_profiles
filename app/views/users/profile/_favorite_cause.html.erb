@@ -1,0 +1,12 @@
+<div class="fav-cause d-flex flex-row">
+  <%= fa_icon "#{cause_logos[favorite_cause.cause]} 2x", class: "fav-cause__logo mr-3" %>
+  <div class="flex-fill">
+    <div class="d-flex justify-content-between">
+      <div class="heading mb-2">
+        <%= favorite_cause.cause.titleize %>
+      </div>
+      <%= render "shared/cause_label", cause: favorite_cause.cause %>
+    </div>
+    <div class="body-medium"><%= favorite_cause.description %></div>
+  </div>
+</div>
