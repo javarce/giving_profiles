@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   has_many :user_favorite_causes, -> { order(:rank) }, dependent: :destroy
   has_many :user_favorite_organizations, -> { order(:rank) }, dependent: :destroy
+  has_many :favorite_organizations, through: :user_favorite_organizations, source: :organization
   has_many :donations, dependent: :destroy
 
   validates :email, uniqueness: true
