@@ -1,7 +1,7 @@
 .user-profile-edit {
-  .profile-section[data-title="favorite-organizations"] {
-    .fav-orgs {
-      .fav-org {
+  .profile-section[data-title="favorite-causes"] {
+    .fav-causes {
+      .fav-cause {
         margin-left: -50px;
         margin-bottom: 20px;
 
@@ -31,13 +31,13 @@
           margin-top: 5px;
         }
         &:first-child {
-          .fav-org__buttons__up {
+          .fav-cause__buttons__up {
             @extend .icon-disabled;
             cursor: default;
           }
         }
         &:last-child {
-          .fav-org__buttons__down {
+          .fav-cause__buttons__down {
             @extend .icon-disabled;
             cursor: default;
           }

@@ -1,10 +1,10 @@
 .user-profile {
-  .profile-section[data-title="favorite-organizations"] {
-    .fav-orgs {
+  .profile-section[data-title="favorite-causes"] {
+    .fav-causes {
       height: 112px;
       overflow-y: scroll;
-      
-      .fav-org {
+
+      .fav-cause {
         margin-bottom: 20px;
 
         &__logo {

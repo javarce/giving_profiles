@@ -1,0 +1,6 @@
+<%= render "users/profile/profile_section", title: "Favorite Causes" do %>
+  <div class="fav-causes">
+    <%= render partial: "users/profile_edit/favorite_cause", collection: @user.user_favorite_causes, locals: { form: form } %>
+  </div>
+  <!-- TODO: search and add favorite causes -->
+<% end %>

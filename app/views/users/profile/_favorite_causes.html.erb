@@ -1,0 +1,8 @@
+<%= render "users/profile/profile_section", title: "Favorite Causes" do %>
+  <div class="fav-causes">
+    <%= render partial: "users/profile/favorite_cause", collection: @user.user_favorite_causes %>
+  </div>
+  <% if @user.user_favorite_causes.length > 2 %>
+    <%= render "shared/scroll_arrow" %>
+  <% end %>
+<% end %>

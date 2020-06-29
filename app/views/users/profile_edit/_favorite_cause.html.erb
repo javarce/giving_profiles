@@ -1,0 +1,22 @@
+<div class="fav-cause">
+  <%= form.fields_for :user_favorite_causes, favorite_cause do |favorite_cause_fields| %>
+    <div class="fav-cause__header d-flex">
+      <%= fa_icon "#{cause_logos[favorite_cause.cause]} 2x", class: "fav-cause__logo mr-3" %> <!-- placeholder for now -->
+      <div>
+        <div class="body-emphasis">
+          <%= favorite_cause.cause.titleize %>
+        </div>
+        <%= render "shared/cause_label", cause: favorite_cause.cause %>
+      </div>
+    </div>
+    <div class="fav-cause__content d-flex align-items-center">
+      <div class="fav-cause__buttons d-flex flex-column mr-3">
+        <%= fa_icon "arrow-circle-up", class: "fav-cause__buttons__up my-1" %>
+        <%= fa_icon "arrow-circle-down", class: "fav-cause__buttons__down my-1" %>
+      </div>
+      <%= favorite_cause_fields.text_area :description, class: "form-control fav-cause__description", placeholder: "I like/donate to this cause for..." %>
+    </div>
+    <%= favorite_cause_fields.hidden_field :id, class: "fav-cause__id" %>
+    <%= favorite_cause_fields.hidden_field :rank, class: "fav-cause__rank" %>
+  <% end %>
+</div>

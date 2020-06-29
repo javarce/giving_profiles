@@ -1,4 +1,4 @@
-<%= render "users/profile/profile_section", title: "Past Donations"  do %>
+<%= render "users/profile/profile_section", title: "Past Donations" do %>
   <div class="mini-user-profile-info">
     <%= image_tag(@user.profile_image, class: "rounded-circle avatar mr-3") %>
     <span class="heading"><%= @user.name %></span>
@@ -11,16 +11,13 @@
         <%= text_field_tag nil, nil, placeholder: "Search my past donations", class: "border-0 p-1 past-donations__search" %>
       </div>
 
-      <div class="past-donations__cards mb-3 p-1">
-        <% @user.donations.reverse.compact.each do |donation| %>
-          <%= render "users/profile/past_donation", donation: donation %>
-        <% end %>
+      <div class="past-donations__cards p-1">
+        <%= render partial: "users/profile/past_donation", collection: @user.donations.reverse.compact %>
       </div>
 
-      <div class="d-flex align-items-center">
-        <%= fa_icon "arrow-down", class: "icon-toned-down mx-3" %>
-        <span class="body-small">Scroll down to see more</span>
-      </div>
+      <% if @user.donations.length > 4 %>
+        <%= render "shared/scroll_arrow" %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

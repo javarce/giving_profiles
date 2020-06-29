@@ -87,6 +87,7 @@ class UsersController < ApplicationController
                                  :yearly_income,
                                  :organization_name,
                                  :amount,
+                                 user_favorite_causes_attributes: %i[id description rank],
                                  user_favorite_organizations_attributes: %i[id description rank])
   end
 

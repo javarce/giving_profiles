@@ -16,15 +16,14 @@ class User < ApplicationRecord
   pg_search_scope :search_by_name_email_location, against: %i[first_name last_name email location]
 
   has_many :user_favorite_causes, -> { order(:rank) }, dependent: :destroy
-  has_many :favorite_causes, through: :user_favorite_causes
   has_many :user_favorite_organizations, -> { order(:rank) }, dependent: :destroy
-  has_many :favorite_organizations, through: :user_favorite_organizations, source: :organization
   has_many :donations, dependent: :destroy
 
   validates :email, uniqueness: true
   validates_presence_of :first_name, :last_name
   validates :yearly_income, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
+  accepts_nested_attributes_for :user_favorite_causes
   accepts_nested_attributes_for :user_favorite_organizations
 
   attr_accessor :organization_name
