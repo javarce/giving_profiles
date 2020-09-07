@@ -5,12 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .button-light {
   @extend .button;
   @extend .btn-outline-secondary;
-  border: solid 2px;
 
   &.active, &:hover {
     @extend .button-dark;

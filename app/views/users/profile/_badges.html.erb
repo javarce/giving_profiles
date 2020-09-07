@@ -1,7 +1,7 @@
 <%= render "users/profile/profile_section", title: "Badges" do %>
   <div class="d-flex flex-column align-items-center">
     <div class="badge-row d-flex justify-content-center flex-wrap">
-      <% @badges.each do |badge, tier, description| %>
+      <% @user.badges.each do |badge, tier, description| %>
         <div
           data-tier="<%= tier %>"
           data-description="<%= description %>"

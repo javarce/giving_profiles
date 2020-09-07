@@ -5,7 +5,7 @@
     $(".badge-row > .badge").hover(showDescription, hideDescription);
   });
 
-  let tierMap = {
+  const tierMap = {
     1: 10,
     2: 30,
     3: 50,
@@ -13,21 +13,21 @@
     5: 90,
   }
 
-  let showDescription = e => {
+  const showDescription = e => {
     let badge = $(e.target);
     if (badge.is("i")) {
       badge = badge.parent();
     }
-    let description = badge.attr("data-description");
-    let tier = badge.attr("data-tier");
+    const description = badge.data("description");
+    const tier = badge.data("tier");
     let html = description.replace("#{PERCENTAGE}", tierMap[parseInt(tier)]);
     if (tier < 5) {
-      html += `<br><br>Next tier unlocks at ${tierMap[parseInt(tier) + 1]}%.`
+      html += `<br>Next tier unlocks at ${tierMap[parseInt(tier) + 1]}%.`
     }
     $(".badge-description").html(html);
   }
 
-  let hideDescription = e => {
+  const hideDescription = e => {
     $(".badge-description").html("");
   }
 

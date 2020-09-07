@@ -1,7 +1,7 @@
 <%= render "users/profile/profile_section", title: "Causes" do %>
-  <% if @donation_distribution.present? %>
+  <% if @user.donation_distribution.present? %>
     <div class="donation-distribution mb-2">
-      <% @donation_distribution.each do |cause, percent| %>
+      <% @user.donation_distribution.each do |cause, percent| %>
         <div class="donation-bar" data-cause="<%= cause %>" data-percent="<%= percent %>">
           <div class="donation-bar__over-bar bg_color_<%= cause %> mb-1"></div>
           <div class="donation-bar__cause">#<%= cause.titleize %></div>
