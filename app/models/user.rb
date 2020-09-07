@@ -27,8 +27,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_favorite_causes
   accepts_nested_attributes_for :user_favorite_organizations
 
-  attr_accessor :organization_name
-  attr_accessor :amount
+  attr_accessor :organization_name, :amount
 
   # rubocop:disable Metrics/AbcSize
   def self.from_omniauth(auth)
@@ -37,7 +36,7 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.password = Devise.friendly_token[0, 20]
-      user.avatar_url = auth.info.image + "?type=large" # assuming the user model has a name
+      user.avatar_url = "#{auth.info.image}?type=large" # assuming the user model has a name
       # TODO: user.fb_url = _____
       user.uid = auth.uid
       user.provider = auth.provider
