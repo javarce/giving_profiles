@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.6.6
 before_install:
-  - gem install bundler:2.1.2
+  - gem install bundler:2.1.4
 install:
   - bundle install
 before_script:
@@ -14,5 +14,5 @@ script:
   - rails check:no_fix
 addons:
   chrome: stable
-services:
-  - postgresql
+  postgresql: "9.4"
+dist: bionic
