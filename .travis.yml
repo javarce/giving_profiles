@@ -16,3 +16,4 @@ addons:
   chrome: stable
 services:
   - postgresql
+dist: trusty
