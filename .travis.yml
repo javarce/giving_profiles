@@ -15,4 +15,4 @@ script:
 addons:
   chrome: stable
   postgresql: "9.4"
-dist: trusty
+dist: bionic
