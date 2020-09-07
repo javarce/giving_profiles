@@ -3,8 +3,6 @@
 class UsersController < ApplicationController
   helper_method :cause_logos, :badge_logos
   before_action :user, only: %i[home show edit add_donation]
-  before_action :badges, only: %i[show]
-  before_action :donation_distribution, only: %i[show]
   before_action :ensure_current_user, :verify_access, only: %i[home edit]
 
   def show; end
@@ -47,12 +45,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def badges
-    @badges = @user.badges
   end
 
-  def donation_distribution
-    @donation_distribution = @user.donation_distribution
   end
 
   def cause_logos
