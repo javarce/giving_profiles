@@ -6,23 +6,23 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.6"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.0.2", ">= 6.0.2.2"
+gem "rails", "~> 5.2.4", ">= 5.2.4.2"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.2"
 gem "pg_search", "~> 2.1"
 # Use Puma as the app server
-gem "puma", "~> 4.1"
+gem "puma", "~> 3.11"
 # Use SCSS for stylesheets
-gem "sass-rails", ">= 6"
+gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", ">= 1.3.0"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "jbuilder", "~> 2.7"
+gem "jbuilder", "~> 2.5"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", ">= 1.4.2", require: false
+gem "bootsnap", ">= 1.1.0", require: false
 
 # Normalize.css
 gem "normalize-rails"
