@@ -25,19 +25,30 @@ class UsersController < ApplicationController
     @network_donations = Donation.order(created_at: :desc).first(5)
   end
 
-  # /users/:id/add_donation
   def add_donation
     organization = Organization.find_or_create_by(name: user_params[:organization_name])
     @donation = DonationService.create_donation(@user, organization, user_params[:amount])
     if @donation.save
       flash[:success] = "Successfully added donation!"
-      # should redirect to user home page
     else
       flash[:error] = @donation.errors.full_messages.join(";  ")
-      # should redirect to user home page with errors
     end
     redirect_to :home_user
   end
+
+  def update_donation; end
+
+  def delete_donation; end
+
+  def add_favorite_cause
+    puts(user_params)
+  end
+
+  def delete_favorite_cause; end
+
+  def add_favorite_org; end
+
+  def delete_favorite_org; end
 
   private
 
@@ -77,7 +88,7 @@ class UsersController < ApplicationController
                                  :yearly_income,
                                  :organization_name,
                                  :amount,
-                                 user_favorite_causes_attributes: %i[id description rank],
+                                 user_favorite_causes_attributes: %i[cause description rank],
                                  user_favorite_organizations_attributes: %i[id description rank])
   end
 

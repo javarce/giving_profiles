@@ -1,4 +1,4 @@
-<div class="fav-cause">
+<div class="fav-cause" data-cause="<%= favorite_cause.cause %>">
   <%= form.fields_for :user_favorite_causes, favorite_cause do |favorite_cause_fields| %>
     <div class="fav-cause__header d-flex">
       <%= fa_icon "#{cause_logos[favorite_cause.cause]} 2x", class: "fav-cause__logo mr-3" %> <!-- placeholder for now -->

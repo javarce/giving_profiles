@@ -118,6 +118,19 @@ class User < ApplicationRecord
                                               .map { |c, a| [c, (100 * a.to_f / cause_donations.values.sum).round] }
   end
 
+  def potential_favorite_causes
+    @potential_favorite_causes ||= Organization.causes.map { |k, v| [v.titleize, k] }
+  end
+
+  def potential_favorite_organizations
+    @potential_favorite_organizations ||= Donation.joins(:organization)
+                                                  .where("user_id = ?", id)
+                                                  .select(:"organizations.id", :"organizations.name")
+                                                  .group(:"organizations.id")
+                                                  .order(:"organizations.name")
+                                                  .map { |o| [o.name, o.id] }
+  end
+
   # TODO: move to a helper
   def profile_image
     avatar_url.present? ? avatar_url : "default_avatar"

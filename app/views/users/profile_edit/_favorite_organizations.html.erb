@@ -2,5 +2,9 @@
   <div class="fav-orgs">
     <%= render partial: "users/profile_edit/favorite_organization", collection: @user.user_favorite_organizations, locals: { form: form } %>
   </div>
-  <!-- TODO: search and add favorite organization -->
+  <div class="new-fav-org d-flex align-items-center">
+    <span class="body-toned-down">Add a new favorite organization</span>
+    <%= select_tag "orgs", options_for_select([["Select", 0]] + @user.potential_favorite_organizations), class: "form-control w-auto mx-3 new-fav-org__select" %>
+    <div class="button-light new-fav-org__submit">Add</div>
+  </div>
 <% end %>

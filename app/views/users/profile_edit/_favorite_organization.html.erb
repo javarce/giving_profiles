@@ -1,5 +1,5 @@
 <% org = favorite_organization.organization %>
-<div class="fav-org">
+<div class="fav-org" data-org="<%= org.id %>">
   <%= form.fields_for :user_favorite_organizations, favorite_organization do |fav_org_fields| %>
     <div class="fav-org__header d-flex">
       <%= fa_icon "#{cause_logos[org.cause]} 2x", class: "fav-org__logo mr-3" %> <!-- placeholder for now -->

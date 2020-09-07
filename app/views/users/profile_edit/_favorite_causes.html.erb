@@ -2,5 +2,9 @@
   <div class="fav-causes">
     <%= render partial: "users/profile_edit/favorite_cause", collection: @user.user_favorite_causes, locals: { form: form } %>
   </div>
-  <!-- TODO: search and add favorite causes -->
+  <div class="new-fav-cause d-flex align-items-center">
+    <span class="body-toned-down">Add a new favorite cause</span>
+    <%= select_tag "causes", options_for_select([["Select", 0]] + @user.potential_favorite_causes), class: "form-control w-auto mx-3 new-fav-cause__select" %>
+    <div class="button-light new-fav-cause__submit">Add</div>
+  </div>
 <% end %>
