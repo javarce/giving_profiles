@@ -45,10 +45,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  end
-
-  end
-
   def cause_logos
     {
       "animals" => "paw",
