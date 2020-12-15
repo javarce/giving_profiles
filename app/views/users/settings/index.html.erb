@@ -1,0 +1,58 @@
+<div class="gp-settings">
+    <%= render template: "layouts/user_header" %>
+
+    <div class="row">
+        <div class="col-4 col-md-4 col-sm-12">
+            <div class="profile-section" data-title="account">
+                <span class="subtitle">account</span>
+                <hr class="divider">
+            </div>
+
+            <p>Connected Facebook Account</p>
+            <div class="Tab-Base">
+                <div class="row">
+                    <div class="col-10">
+                        <small>
+                            <%= image_tag(@user.profile_image, class: "Avatar") %>
+                        </small>
+                        <small>
+                            <span class="gp-connected-name"><%= @user.name %></span>
+                        </small>
+                    </div>
+
+                    <div class="col-2 gp-link-base">
+                        <div><i class="link---FontAwesome"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="gp-button-logout">Logout</button>
+
+            <button class="gp-button-base">Delete My Account</button>
+        </div>
+
+        <div class="col-8 col-md-8 col-sm-12">
+            <div class="profile-section" data-title="donation-privacy-settings">
+                <span class="subtitle">donation privacy settings</span>
+                <hr class="divider">
+            </div>
+
+            <% @donations.each do |donation| %>
+                <div class="row">
+                    <div class="col-6 col-md-6 col-sm-12">
+                        <div class="gp-left">
+                            <span class="Name"><%= donation.organization.name %></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-6 col-md-6 col-sm-12">
+                        <select class="form-control">
+                            <option value="0">Public - Visible to Everyone</option>
+                            <option value="1">Private - Visible to only Myself</option>
+                        </select>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

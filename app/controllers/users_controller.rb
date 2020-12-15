@@ -56,7 +56,7 @@ class UsersController < ApplicationController
       "human_services" => "users",
       "international" => "globe",
       "religion" => "praying-hands",
-      "unknown" => "question"
+      "unknown" => "question",
     }
   end
 
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     cause_logos.merge({
                         "income" => "dollar-sign",
                         "highly_effective" => "check-circle",
-                        "local" => "street-view"
+                        "local" => "street-view",
                       })
   end
 

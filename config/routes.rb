@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get '/policy' => 'home#policy'
   get '/contact' => 'home#contact'
   get '/contact' => 'home#contact'
+  get '/settings' => 'settings#index'
   get '/search' => 'search#index'
   get '/search/:query/organization' => 'search#organizations', :as => :organization_search_results
   get '/search/:query/user' => 'search#users', :as => :user_search_results
+  get '/user/:id/settings', to: 'user#settings', :as => :user_settings
 
   resources :users, only: [:show, :edit, :update] do
     member do
