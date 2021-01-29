@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def home
     redirect_to login_path unless user_signed_in?
-    @network_donations = Donation.order(created_at: :desc).first(5)
+    @network_donations = Donation.where(public: true).order(created_at: :desc).first(5)
   end
 
   # /users/:id/add_donation
