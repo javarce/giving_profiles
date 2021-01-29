@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/search/:query/organization' => 'search#organizations', :as => :organization_search_results
   get '/search/:query/user' => 'search#users', :as => :user_search_results
   get '/user/:id/settings', to: 'user#settings', :as => :user_settings
+  get '/user/:id/update_donation_privacy', to: 'user#update_donation_privacy', :as => :update_donation_privacy
 
   resources :users, only: [:show, :edit, :update] do
     member do
